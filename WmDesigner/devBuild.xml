@@ -1,0 +1,232 @@
+<!--
+    ANT build file for the WmDesigner Package
+    This build process assumes that you're planning to compile the
+    WmDesigner out of this directory, but that you're actually going to
+    have it installed on an IS somewhere else for running and testing.
+-->
+<project default="compile" basedir=".">
+	<property file="shared_code.properties"/>
+    <target name="help">
+        <echo message=" targets:" />
+        <echo message="dir.shared: ${dir.shared}" />
+        <echo message="  compile - Makes wmdesigner.jar (default target)" />
+        <echo message="  all - Makes and deploys the whole package" />
+    </target>
+    <target name="init">
+    	<echo message="my.IS_HOME: ${my.IS_HOME}" />
+    	<echo message="IS_SERVER_URL: ${IS_SERVER_URL}" />
+        <delete dir="${des.staging}" failOnError="false" includeEmptyDirs="true" />
+    	<delete dir="${des.antTasks.build}" failOnError="false" includeEmptyDirs="true" />
+		<mkdir dir="${build.output}" />
+        <mkdir dir="${des.staging}" />
+        <mkdir dir="${des.staging.classes}" />
+        <mkdir dir="${des.staging.jars}" />
+       	<mkdir dir="${des.staging.ns}" />
+        <mkdir dir="${des.antTasks.build}" />
+    </target>
+    <!--
+=====================
+    Definitions
+=====================
+-->
+    <!-- Where is this build file located? -->
+    <!--<property environment="env" />-->
+    <property name="build.output" value="${basedir}/out" />
+    <property name="des.staging" value="${build.output}/staging/IntegrationServer" />
+    <property name="des.staging.home" value="${des.staging}/packages/WmDesigner" />
+    <property name="des.staging.ns" value="${des.staging.home}/ns" />
+    <property name="des.staging.jars" value="${des.staging.home}/code/jars" />
+    <property name="des.staging.static.jars" value="${des.staging.home}/code/jars/static" />
+    <property name="des.staging.source" value="${des.staging.home}/code/source" />
+    <property name="des.staging.classes" value="${des.staging.home}/code/classes" />
+    <property name="des.staging.function" value="${des.staging}/config/jdbc/function" />
+
+    <property name="lib.home" value="${basedir}/lib" />
+    <property name="dir.shared" value="${dir.shared}" />
+    <property name="common.include" value="${basedir}/depend/common.txt" />
+    <property name="runtime.include" value="${basedir}/depend/runtime.txt" />
+    <property name="des.home" value="${basedir}" />
+    <property name="des.home.ns" value="${des.home}/ns" />
+    <property name="des.home.source" value="${des.home}/code/source" />
+    <property name="des.function" value="${basedir}/config" />
+    <property name="des.home.pub" value="${des.home}/pub" />
+    <!-- Where is the IS you're going to run Designer on? -->
+    <property name="IS_HOME" value="${my.IS_HOME}" />
+    <property name="des.target" value="${IS_HOME}/packages/WmDesigner" />
+    <property name="des.target.ns" value="${des.target}/ns" />
+    <property name="des.target.jardir" value="${des.target}/code/jars" />
+    <property name="des.target.static.jardir" value="${des.target}/code/jars/static" />
+    <property name="des.target.source" value="${des.target}/code/source" />
+    <property name="des.target.pub" value="${des.target}/pub" />
+	<!-- ANT Tasks -->
+	<property name="IS_SERVER_URL" value="${IS_SERVER_URL}" />
+    <property name="des.antTasks.source" value="${basedir}/../../antTasks/source" />
+    <property name="des.antTasks.build" value="${build.output}/antTasks" />
+	
+    <!-- CLASSPATH used to compile, based on above dirs -->
+	<path id="classpath.antTasks">
+		<path refid="classpath.des"/>
+		<pathelement location="${build.output}/DesignerAntTasks.jar" />
+	</path>
+		
+	<path id="classpath.des">
+      <fileset dir="${dir.shared}"/>
+      <fileset dir="${basedir}/../../lib" includes="**/*.jar" /> 
+  </path>
+    <!--
+=====================
+  Makes and deploys the whole package
+=====================
+-->
+    <target name="all" depends="deployjar, deployns" />
+
+    <!--
+=====================
+  Compiles the Designer core
+=====================
+-->
+    <target name="compile" depends="init">
+        <javac destdir="${des.staging.classes}" srcdir="${des.home.source}" debug="on" classpathref="classpath.des" includeAntRuntime="false" />
+        <javac destdir="${des.antTasks.build}" srcdir="${des.antTasks.source}" debug="on" classpathref="classpath.des" includeAntRuntime="true" />
+    </target>
+    <!--
+=====================
+  Make the wmdesigner.jar jar file
+=====================
+-->
+    <target name="makejar" depends="compile">
+        <jar jarfile="${des.staging.jars}/wmdesigner.jar" compress="true" basedir="${des.staging.classes}" includes="wm/designer/**/*.class,wm/administrator/**/*.class">
+          <manifest>
+                <section name="webMethods">
+                  <attribute name="Implementation-Version" value="${component.full.version}"/>
+                  <attribute name="Implementation-Vendor" value="webMethods, Inc."/>
+                  <attribute name="webM-buildNumber" value="${build.number}"/>
+                  <attribute name="webM-buildDate" value="${TODAY_jars}"/>
+                </section>
+          </manifest>
+        </jar>
+       
+        <jar jarfile="${build.output}/DesignerAntTasks.jar" compress="true" basedir="${des.antTasks.build}" includes="**/*.class">
+          <manifest>
+                <section name="webMethods">
+                  <attribute name="Implementation-Version" value="${component.full.version}"/>
+                  <attribute name="Implementation-Vendor" value="webMethods, Inc."/>
+                  <attribute name="webM-buildNumber" value="${build.number}"/>
+                  <attribute name="webM-buildDate" value="${TODAY_jars}"/>
+                </section>
+          </manifest>
+        </jar>
+    </target>
+    <!--
+=====================
+  Deploy (copy) the jar from source to target
+=====================
+-->
+    <target name="deployjar" depends="makejar">
+        <copy todir="${des.target.jardir}" file="${des.staging.jars}/wmdesigner.jar" overwrite="Yes" />
+    		<delete dir="${des.target.jardir}/code/classes" failonerror="false"/>
+				<copy todir="${des.target.jardir}/code/jars" overwrite="true" flatten="true">
+            <fileset dir="${basedir}/../../lib" includes="**/*.jar">
+                <include name="commons-io.jar"/>
+            		<include name="jh.jar"/>
+            		 <include name="modelfit.jar"/>
+                <include name="simprocess.jar"/>
+                <include name="SPInterface.jar"/>
+                <include name="SPRemote.jar"/>
+                <include name="xbean.jar"/>
+                <include name="xalan-j.jar"/>
+            </fileset>
+            <fileset dir="${base.eclipse}/plugins">
+                <include name="org.eclipse.gef_*.jar"/>
+            		<include name="org.eclipse.ui.workbench_*.jar"/>
+            		<include name="org.eclipse.draw2d_*.jar"/>
+                <include name="org.eclipse.equinox.common_*.jar"/>
+           	</fileset>
+
+        	<fileset dir="${base.eclipse}/plugins">
+        		<include name="com.webmethods.process.generator_*/lib/process-engine-model.jar"/>
+        				
+           	</fileset>
+
+            <fileset dir="${base.eclipse}/plugins/">
+                <include name="com.webmethods.process.metadatadeployer_*/metadeployer.jar"/>
+           	</fileset>
+
+            <fileset dir="${base.eclipse}/plugins/">
+                <include name="com.webmethods.process.editor_*/processeditor.jar"/>
+           	</fileset>
+    
+            <fileset dir="${base.eclipse}/plugins/">
+                <include name="com.webmethods.process.connection_*/connection_is.jar"/>
+            </fileset>
+        </copy>
+   
+    </target>
+    <!--
+=====================
+  Deploy all NS-related items from source to target
+  (service definitions as well as documents types)
+=====================
+-->
+    <target name="deployns" depends="init">
+        <!-- Delete all code, NS, and pub items from existing package -->
+        <delete failonerror="false">
+            <fileset dir="${des.target.ns}">
+                <include name="**/*.ndf" />
+                <include name="**/*.idf" />
+                <include name="**/*.xml" />
+                <include name="**/*.frag" />
+                <include name="**/*.bak" />
+            </fileset>
+            <fileset dir="${des.target.source}">
+                <include name="wm/administrator/*.java" />
+                <include name="wm/designer/**/*.java" />
+            </fileset>
+        </delete>
+        <!-- Copy doctype definitions, flows to new package -->
+        <copy todir="${des.target.ns}">
+            <fileset dir="${des.home.ns}">
+                <include name="**/*.ndf" />
+                <include name="**/*.xml" />
+            </fileset>
+        </copy>
+        <!-- Copy service source code to new package -->
+        <copy todir="${des.target.source}">
+            <fileset dir="${des.home.source}">
+                <include name="wm/administrator/*.java" />
+                <include name="wm/designer/**/*.java" />
+            </fileset>
+        </copy>
+        <!-- Invokes NodeUtil directly to frag the whole WmPRT package -->
+        <java fork="true" classname="com.wm.app.b2b.server.NodeUtil" classpathref="classpath.des" failonerror="true">
+            <sysproperty key="file.encoding" value="8859_1" />
+            <sysproperty key="watt.server.compile" value="javac -g -classpath {0} -d {1} {2}" />
+        	<sysproperty key="watt.server.compile.exitOnError" value="true" />
+            <arg value="${IS_HOME}" />
+            <arg value="fragall" />
+            <arg value="WmDesigner" />
+        </java>
+    </target>
+
+	<target name="reloadPackageTaskDefinition" description="Defines the ReloadPackage custom task">
+       <taskdef name="ReloadPackage" classname="com.wm.ant.ReloadPackage" classpathref="classpath.antTasks"/>
+    </target>
+
+    <target name="reloadPackage" depends="reloadPackageTaskDefinition" description="Reloads the package">
+        <ReloadPackage url="${IS_SERVER_URL}" failOnError="false"/>
+    	<!--<ReloadPackage url="localhost:7777" failOnError="false"/>-->
+    </target>
+
+    <!--
+=====================
+  Deletes the build
+=====================
+-->
+    <target name="clean">
+        <delete quiet="false" failOnError="false" file="${des.staging.jars}/wmdesigner.jar" />
+        <delete quiet="false" failOnError="false" dir="${des.staging}" />
+    	<delete quiet="false" failOnError="false" dir="${prt.antTasks.build}" />
+    </target>
+    
+</project>
+

@@ -1,0 +1,125 @@
+<ehcache     
+    name="SoftwareAG.IS.TN"     
+    updateCheck="false"
+	monitoring="on">    
+    <diskStore         
+        path="./cacheStore/SoftwareAG-IS-TN">    
+    </diskStore>    
+    <defaultCache         
+        eternal="false"         
+        maxElementsInMemory="0"         
+        overflowToDisk="false">    
+    </defaultCache>    
+    
+    <!--  query result pagination related caching -->
+    <cache         
+        name="TNQueryResults"         
+        eternal="false"         
+        maxElementsInMemory="500"  
+		    maxElementsOnDisk="5000"                 
+        timeToIdleSeconds="300"         
+        timeToLiveSeconds="1200"
+		    statistics="true">
+        <persistence             
+              strategy="localtempswap"/>                
+    </cache>
+	
+	
+	<!--  contains a mapping between BizDoc type id vs BizDoc type obj  -->
+	<cache         
+        name="TNDocType"         
+        maxEntriesLocalHeap="0"         
+        statistics="true">        
+		<searchable>
+			<searchAttribute name="typeName" 
+				class="com.wm.app.tn.cache.attributeExtractors.BizDocTypeCacheSearchAttributeExtractor" />
+		</searchable>
+        <elementValueComparator             
+            class="net.sf.ehcache.store.DefaultElementValueComparator"/>    
+    </cache>
+	
+	
+	<!--  contains a mapping between BizDoc attr id vs biz doc attr obj -->
+	<cache         
+        name="TNDocAttribute"         
+        maxEntriesLocalHeap="0"         
+        statistics="true">        
+		<searchable>
+			<searchAttribute name="attributeName" expression="value.getName()"/>
+		</searchable>
+        <elementValueComparator             
+            class="net.sf.ehcache.store.DefaultElementValueComparator"/>    
+    </cache>   
+
+
+    <!-- TPA id contains a mapping between 
+    concatenation of senderid, receiverid and agreeementid vs TPA id  -->
+    <cache         
+        name="TNTPAId"         
+        eternal="true"         
+        maxEntriesLocalHeap="0"         
+        statistics="true">        
+        <persistence             
+            strategy="none"/>        
+        <elementValueComparator             
+            class="net.sf.ehcache.store.DefaultElementValueComparator"/>    
+    </cache>
+
+
+    <!-- TPA cache containing a mapping between 
+    TPA id vs softreference to a TPA object  -->
+    <cache         
+        name="TNTPA"         
+        eternal="true"         
+        maxEntriesLocalHeap="1000"         
+        statistics="true"         
+        memoryStoreEvictionPolicy="FIFO">        
+        <persistence             
+            strategy="none"/>        
+        <elementValueComparator             
+            class="net.sf.ehcache.store.DefaultElementValueComparator"/>    
+    </cache>
+
+
+    <!-- Profile Summaries cache containing elements of 
+    (ProfileId, ProfileSummary)-->
+    <cache         
+        name="TNProfileSummary"         
+        eternal="true"         
+        maxEntriesLocalHeap="0"         
+        statistics="true">        
+        <elementValueComparator             
+            class="net.sf.ehcache.store.DefaultElementValueComparator"/>        
+        <searchable>            
+            <searchAttribute                 
+                name="displayName"                 
+                expression="value.getDisplayName()"/>        
+        </searchable>    
+    </cache>
+
+
+    <!-- Profile idMap cache containing elements of 
+    (externalId, ProfileId)-->
+    <cache         
+        name="TNProfileId"         
+        eternal="true"         
+        maxEntriesLocalHeap="0"         
+        statistics="true">        
+        <elementValueComparator             
+            class="net.sf.ehcache.store.DefaultElementValueComparator"/>    
+    </cache>
+
+
+    <!-- Profile cache containing elements of 
+    (ProfileId, Profile)-->
+    <cache         
+        name="TNProfile"         
+        eternal="true"         
+        maxEntriesLocalHeap="50"         
+        copyOnRead="true"         
+        statistics="true"
+        memoryStoreEvictionPolicy="LRU">        
+        <elementValueComparator             
+            class="net.sf.ehcache.store.DefaultElementValueComparator"/>    
+    </cache>    
+</ehcache>

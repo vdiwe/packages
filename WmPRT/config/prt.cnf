@@ -1,0 +1,16 @@
+#
+#Sun Sep 10 14:59:40 PDT 2006
+watt.prt.transport.default=BROKER
+watt.prt.cleanInterval=600
+watt.prt.processExpire=60
+watt.prt.failedProcessExpire=3600
+watt.prt.sleepInterval=1
+watt.prt.checkDuplicates=false
+watt.prt.maxdbretries=360
+watt.prt.externalcluster=false
+watt.prt.reap.invokeas=Administrator
+watt.prt.broadcastInterval=120
+watt.prt.maxBroadcastEvents=1000
+watt.prt.optimizeBrokerURL=
+watt.prt.auditLogProcessAtRest=false
+

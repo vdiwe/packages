@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+
+<!--
+COPYRIGHT (C) 2000-2010 SOFTWARE AG, INC. All rights reserved.
+-->
+
+<project name="Create rule project archive" default="run" basedir=".">
+    <property name="base.dir" value="${basedir}"/>    
+    
+    <path id="rules.jars">
+        <fileset dir="${eclipse.home}/plugins">
+            <include name= "*.jar" />
+            <include name= "com.softwareag.rules.runtimejars_8.2.0.*/*.jar" />
+        </fileset>
+    </path>
+
+    <taskdef name="createProjectArchive" 
+        classname="com.softwareag.rules.export.core.ant.CreateProjectArchive" 
+        classpathref="rules.jars"/>
+            
+    <target name="cleanup">
+    </target>
+    
+    <target name="run" depends="cleanup">
+        <createProjectArchive/>
+        
+        <echo message="Rule project archive created successfully" />
+    </target>
+</project>

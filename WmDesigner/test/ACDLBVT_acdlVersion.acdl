@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<asset_composite xmlns:EventServer="http://namespaces.softwareag.com/webMethods/EventServer" xmlns:EDA="http://namespaces.softwareag.com/webMethods/EDA" xmlns:RULES="http://namespaces.softwareag.com/webMethods/RULES" xmlns:TN="http://namespaces.softwareag.com/webMethods/TN" xmlns:MWS="http://namespaces.softwareag.com/webMethods/MWS" xmlns:IS="http://namespaces.softwareag.com/webMethods/IS" xmlns:BROKER="http://namespaces.softwareag.com/webMethods/Broker" xmlns:BPM="http://namespaces.softwareag.com/webMethods/BPM" xmlns:Optimize="http://namespaces.softwareag.com/webMethods/Optimize" targetNamespace="http://namespaces.softwareag.com/webMethods/BPM" runtimeVersion="8.2.1" displayName="ACDLBVT/acdlVersion" name="ACDLBVT_acdlVersion" xmlns="http://namespaces.softwareag.com/acdl/1.0">
+    <implementation.generic type="bpmprocess"/>
+    <buildInfo value="2011-09-30T00:06:24" name="build.timestamp"/>
+    <buildInfo value="8.2.2" name="build.version"/>
+    <asset isDeployable="true" displayName="ACDLBVT/acdlVersion" name="ACDLBVT_acdlVersion">
+        <implementation.generic type="bpmprocess"/>
+        <dependsOn logicalServer="Default">IS:ACDLBVT.acdlVersion.Default.subscriptionTrigger</dependsOn>
+        <dependsOn logicalServer="Default">IS:ACDLBVT.acdlVersion.acdlVersion_1.Default.Start_acdlVersion</dependsOn>
+        <dependsOn logicalServer="Default">IS:ACDLBVT.acdlVersion.acdlVersion_1.Default.transitionTrigger</dependsOn>
+        <dependsOn logicalServer="Default">IS:ACDLBVT.config.wmprt.ACDLBVT.acdlVersion.ACDLBVT_acdlVersion1.Default.xml</dependsOn>
+        <property displayName="Execution Enabled" isSecure="false" many="false" data_type="boolean" name="executionEnabled">
+            <value>false</value>
+        </property>
+        <property displayName="Tracking Enabled" isSecure="false" many="false" data_type="boolean" name="trackingEnabled">
+            <value>false</value>
+        </property>
+        <property displayName="Logging Level" isSecure="false" many="false" data_type="number" name="loggingLevel">
+            <value>5</value>
+        </property>
+        <property displayName="Enabled for Resubmission: Step1" isSecure="false" many="false" data_type="boolean" name="S3">
+            <value>false</value>
+        </property>
+        <property displayName="Enabled for Resubmission: Start acdlVersion" isSecure="false" many="false" data_type="boolean" name="S12">
+            <value>false</value>
+        </property>
+    </asset>
+</asset_composite>

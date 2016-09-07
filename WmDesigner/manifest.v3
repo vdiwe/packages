@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="enabled">yes</value>
+  <value name="system_package">yes</value>
+  <value name="version">9.10.0.0.169</value>
+  <record name="startup_services" javaclass="com.wm.util.Values">
+    <null name="wm.administrator.repo:centralRepoRegister"/>
+    <null name="wm.administrator.admin:initialize"/>
+    <null name="wm.designer.metadata.AuditLogAccess:init"/>
+    <null name="wm.designer.sim.fitDistribution:init"/>
+  </record>
+  <record name="shutdown_services" javaclass="com.wm.util.Values">
+    <null name="wm.administrator.repo:centralRepoClose"/>
+    <null name="wm.designer.metadata.AuditLogAccess:shutdown"/>
+    <null name="wm.designer.sim.fitDistribution:shutdown"/>
+  </record>
+  <null name="replication_services"/>
+  <null name="requires"/>
+  <null name="listACL"/>
+  <value name="name">WmDesigner</value>
+  <value name="build">169</value>
+  <value name="description"></value>
+  <value name="time">20160211_0720</value>
+  <value name="jvm_version">1.5</value>
+  <value name="publisher">webMethods, Inc.</value>
+  <value name="patch_nums"></value>
+</Values>

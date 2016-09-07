@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="enabled">yes</value>
+  <value name="system_package">no</value>
+  <record name="startup_services" javaclass="com.wm.util.Values">
+    <null name="applatform.services:startup"/>
+  </record>
+  <record name="shutdown_services" javaclass="com.wm.util.Values">
+    <null name="applatform.services:shutdown"/>
+  </record>
+  <null name="replication_services"/>
+  <null name="requires"/>
+  <value name="listACL">Administrators</value>
+  <value name="webappLoad">no</value>
+  <value name="name">WmAppPlat</value>
+  <value name="description">Application Platform Base package</value>
+  <value name="publisher">Software AG</value>
+  <value name="version">9.10.0.0.186</value>
+  <value name="build">186</value>
+  <value name="jvm_version">1.8</value>
+</Values>

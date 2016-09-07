@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="encodeutf8">true</value>
+  <array name="imports" type="value" depth="1">
+    <value>com.softwareag.rules.businessrulespackage.deployer.spi2.ActivateCheckpoint</value>
+    <value>com.softwareag.rules.businessrulespackage.deployer.spi2.ActivateDeployment</value>
+    <value>com.softwareag.rules.businessrulespackage.deployer.spi2.Checkpoint</value>
+    <value>com.softwareag.rules.businessrulespackage.deployer.spi2.DeleteAssets</value>
+    <value>com.softwareag.rules.businessrulespackage.deployer.spi2.DeleteCheckpoint</value>
+    <value>com.softwareag.rules.businessrulespackage.deployer.spi2.DeleteDeliveredArtifacts</value>
+    <value>com.softwareag.rules.businessrulespackage.deployer.spi2.DeliverArtifacts</value>
+    <value>com.softwareag.rules.businessrulespackage.deployer.spi2.ExecuteCommand</value>
+    <value>com.softwareag.rules.businessrulespackage.deployer.spi2.GetAssetReferences</value>
+    <value>com.softwareag.rules.businessrulespackage.deployer.spi2.ListAssets</value>
+    <value>com.softwareag.rules.businessrulespackage.deployer.spi2.Ping</value>
+    <value>com.softwareag.rules.businessrulespackage.deployer.spi2.VerifyAssets</value>
+  </array>
+</Values>

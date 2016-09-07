@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<xsl:stylesheet version="1.0"
+xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:output method="html" version="1.0" encoding="UTF-8" indent="yes"/>
+
+<xsl:template match="/">
+  <html>
+  <HEAD>
+	<LINK REL="stylesheet" TYPE="text/css" HREF="webMethods.css"/>
+  </HEAD>
+  <body>
+	<table border="0" align="Center" width="100%">
+	<TR>
+		<TD colspan="2" class="menusection-Settings">
+			Process Engine &gt;
+			Dashboard
+		</TD>
+	</TR>
+	<tr>
+		<td class="menusection-Server"> 
+			Extended Settings
+		</td>
+		<td class="menusection" >
+			Process Engine Settings
+		</td>
+	
+	</tr>
+	<tr>
+		<td>
+			<table border="1" width="100%">
+			<xsl:for-each select="dashBoard/extendedSettings/Setting">
+				<tr>
+					<TD class="row{position() mod 2}"> <xsl:value-of select="Name"/> </TD> 
+					<TD class="row{position() mod 2}"> <xsl:value-of select="Value"/>  </TD>
+					<xsl:if test="@RECOMMENDATIONS='ALERT'"> 
+						<td> Not Implemented Yet </td>
+					</xsl:if>
+				</tr>
+			</xsl:for-each>
+			</table>
+		</td>
+	
+		<td>
+			<table border="1" width="100%">
+			<xsl:for-each select="dashBoard/prtHome/Setting">
+			<tr>
+				<TD class="row{position() mod 2}"> <xsl:value-of select="Name"/> </TD>
+				<TD class="row{position() mod 2}"> <xsl:value-of select="Value"/> </TD>
+			</tr>
+			</xsl:for-each>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<table border="1" width="100%">
+			<TR>
+				<td colspan="5" class="menusection-Security">JDBC Connections</td>
+			</TR>
+			<TR>
+				<TD width="25%" class="oddcol-l">JDBC Pool</TD>
+        			<TD width="25%" class="oddcol">JDBC Alias</TD>
+				<TD width="15%" class="oddcol">Minimum Connections</TD>
+            		<TD width="15%" class="oddcol">Maximum Connections</TD>
+				<TD width="15%" class="oddcol">Idle Timeout</TD>
+			</TR>
+				<xsl:for-each select="dashBoard/jdbcConnections/jdbcConnection">
+				<tr>
+					<TD class="row{position() mod 2}" width="25%"> <xsl:value-of select="FunctionName"/> </TD>
+					<TD class="row{position() mod 2}" align ="center" width="25%"> <xsl:value-of select="AliasName"/> </TD>
+					<TD class="row{position() mod 2}" align ="center" width="15%"> <xsl:value-of select="MinimumConnections"/> </TD>
+					<TD class="row{position() mod 2}" align ="center" width="15%"> <xsl:value-of select="MaximumConnections"/> </TD>
+					<TD class="row{position() mod 2}" align ="center" width="15%"> <xsl:value-of select="IdleTimeout"/> </TD>
+				</tr>
+				<xsl:if test="@RECOMMENDATIONS='ALERT'"> 
+					<td> Not Implemented Yet </td>
+				</xsl:if>
+				</xsl:for-each>
+	
+		</table>
+	</tr>
+	<tr>
+		<table border="1" width="100%">
+			<TR>
+				<TD colspan="12" CLASS="menusection-Settings">Individual Process Settings</TD>
+			</TR>
+			<TR>
+					<TD width="30%" class="oddcol-l">Process Name</TD>
+					<TD width="10%" class="oddcol">Enabled </TD>
+					<TD width="10%" class="oddcol">Version</TD>
+            			<TD width="10%" class="oddcol">Logging Level</TD>
+					<TD width="10%" class="oddcol">Log Transitions</TD>
+            			<TD width="10%" class="oddcol">Volatile Tracking</TD>
+					<TD width="10%" class="oddcol">Volatile Transitions</TD>
+					<TD width="10%" class="oddcol">Optimize Locally</TD>
+					<TD width="10%" class="oddcol">Uses JMS</TD>
+					<TD width="10%" class="oddcol">Single Server</TD>
+					<TD width="10%" class="oddcol">Express Pipeline</TD>
+					<TD width="10%" class="oddcol">Resubmission StepID(s)</TD>
+			</TR>
+
+			<xsl:for-each select="dashBoard/processSettings/processSetting">
+				<tr>
+					<TD class="row{position() mod 2}" width="30%"> <xsl:value-of select="ModelID"/> </TD>
+					<TD class="row{position() mod 2}" width="10%"> <xsl:value-of select="Enabled"/> </TD>
+					<TD class="row{position() mod 2}" width="10%"> <xsl:value-of select="ModelVersion"/> </TD>
+					<TD class="row{position() mod 2}" width="10%"> <xsl:value-of select="LoggingLevel"/> </TD>
+					<TD class="row{position() mod 2}" width="10%"> <xsl:value-of select="LogTransitions"/> </TD>
+					<TD class="row{position() mod 2}" width="10%"> <xsl:value-of select="VolatileTracking"/> </TD>
+					<TD class="row{position() mod 2}" width="10%"> <xsl:value-of select="VolatileTransitions"/> </TD>
+					<TD class="row{position() mod 2}" width="10%"> <xsl:value-of select="OptimizeLocally"/> </TD>
+					<TD class="row{position() mod 2}" width="10%"> <xsl:value-of select="UsesJMS"/> </TD>
+					<TD class="row{position() mod 2}" width="10%"> <xsl:value-of select="SingleServer"/> </TD>
+					<TD class="row{position() mod 2}" width="10%"> <xsl:value-of select="ExpressPipeline"/> </TD>
+					<TD class="row{position() mod 2}" width="10%"> <xsl:value-of select="StepIDs"/> </TD>
+								
+				</tr>
+				<xsl:if test="@RECOMMENDATIONS='ALERT'"> 
+					<td> Not Implemented Yet </td>
+				</xsl:if>
+				</xsl:for-each>
+	
+		</table>
+				
+	</tr>
+	<tr>
+		<table border="1" width="100%">
+			<TR>
+           			<td class="menusection-Triggers">Global Trigger Controls</td>
+          		</TR>
+		</table>
+	</tr>
+	<tr>
+		<table border="1" width="100%">
+			<tr>
+            		<td width="50%" class="oddcol">Document Retrieval</td>
+            		<td width="50%" class="oddcol">Document Processing</td>
+          		</tr>
+		</table>
+		<table border="1" width="100%">
+			<tr>
+				<td width="25%" class="evenrow-l">Current Threads</td>
+				<td width="25%" class="evenrowdata-l"> <xsl:value-of select="dashBoard/triggers/currentRetThreads"/> </td>
+				<td width="25%" class="evenrow-l">Current Threads</td> 
+				<td width="25%" class="evenrowdata-l"> <xsl:value-of select="dashBoard/triggers/currentExecThreads"/> </td>	
+			</tr>
+			<tr>
+				<td class="oddrow-l">Maximum Threads</td>
+				<td class="oddrowdata-l"> <xsl:value-of select="dashBoard/triggers/maxRetThreads"/> </td>
+				<td class="oddrow-l">Maximum Threads</td>
+            		<td class="oddrowdata-l"> <xsl:value-of select="dashBoard/triggers/maxExecThreads"/> </td>
+			</tr>
+			<tr>
+				<td class="evenrow-l">Queue Capacity Throttle</td>
+				<td class="evenrowdata-l"> <xsl:value-of select="dashBoard/triggers/queueCapacityThrottle"/> </td>
+				<td class="evenrow-l">Execution Threads Throttle</td>
+            		<td class="evenrowdata-l"> <xsl:value-of select="dashBoard/triggers/execThreadsThrottle"/> </td>
+			</tr>
+		</table>	
+	</tr>
+	<tr>
+		<table border="1" width="100%">
+			<tr>
+            		<td colspan="10" class="menusection-Triggers">Individual Trigger Controls</td>
+          		</tr>
+			<tr>
+            		<td colspan="3" class="oddcol">Document Retrieval</td>
+            		<td colspan="7" class="oddcol">Document Processing</td>
+          		</tr>
+			<tr>
+          		  	<td class="oddcol-l">Name</td>
+           		  	<td class="oddcol">Active</td>
+            		<td class="oddcol-l">Queue Capacity</td>
+            		<td class="oddcol-l">Queue Refill Level</td>
+            		<td class="oddcol">Active</td>
+            		<td class="oddcol-l">Processing Mode</td>
+            		<td class="oddcol-l">Maximum Threads</td>
+            		<td class="oddcol-l">Current Threads</td>
+            		<td class="oddcol-l">Volatile Queue</td>
+            		<td class="oddcol-l">Persisted Queue</td>
+          		</tr>
+			<xsl:for-each select="dashBoard/triggers/triggerSetting">
+				<tr>
+					<td class="row{position() mod 2}"> <xsl:value-of select="triggerName"/> </td>
+					<td class="row{position() mod 2}"> <xsl:value-of select="RetrievalStatus"/> </td>
+				 	<td class="row{position() mod 2}"> <xsl:value-of select="QueueCapacity"/> </td>
+				 	<td class="row{position() mod 2}"> <xsl:value-of select="QueueRefillLevel"/> </td>
+				 	<td class="row{position() mod 2}"> <xsl:value-of select="ProcessingStatus"/> </td>
+				 	<td class="row{position() mod 2}"> <xsl:value-of select="ProcessingMode"/> </td>
+				 	<td class="row{position() mod 2}"> <xsl:value-of select="MaximumThreads"/> </td>
+				 	<td class="row{position() mod 2}"> <xsl:value-of select="triggerCurrentThreads"/> </td>
+				 	<td class="row{position() mod 2}"> <xsl:value-of select="VolatileQueue"/> </td>
+				 	<td class="row{position() mod 2}"> <xsl:value-of select="PersistedQueue"/> </td>
+				</tr> 		 
+			<xsl:if test="@RECOMMENDATIONS='ALERT'"> 
+					<td> Not Implemented Yet </td>
+				</xsl:if>
+				</xsl:for-each>
+
+		</table>
+	</tr>
+	<tr>
+	   <table width="100%">
+        
+          <tr>
+            <td class="menusection-Triggers" colspan="5">Global JMS Trigger Controls</td>
+          </tr>
+          
+           <tr>
+            <td class="oddcol" width="20%">Thread Pool Throttle</td>
+	      <td width="25%" class="evenrowdata-l"> <xsl:value-of select="dashBoard/jmsTriggers/jmsThreadPool"/> </td>
+	      <td class="oddcol" width="20%">Processing Throttle</td>
+            <td width="25%" class="evenrowdata-l"> <xsl:value-of select="dashBoard/jmsTriggers/jmsProcessingThread"/> </td>
+           </tr> 
+        
+        </table>  
+       </tr>
+
+      <tr>
+	   <table width="100%">  
+        
+          <tr>
+            <td class="menusection-Triggers" colspan="7">Individual JMS Trigger Controls</td>
+          </tr>
+
+            <td class="oddcol" colspan="5" width="80%"></td>
+            <td class="oddcol" colspan="2" width="20%">State</td>
+
+          <tr>
+            <td class="oddcol-l">Trigger Name</td>
+            <td class="oddcol-l">Connection Alias Name</td>
+            <td class="oddcol-l">Destination(s)</td>
+            <td class="oddcol-l">Processing Mode</td>
+            <td class="oddcol-l">Maximum Threads</td>
+            <td class="oddcol-l">Current Threads</td>
+            <td class="oddcol">Enabled</td>
+          </tr> 
+	   <xsl:for-each select="dashBoard/jmsTriggers/jmsTriggerSetting">
+		<tr>
+			<td class="row{position() mod 2}"> <xsl:value-of select="jmsTriggerName"/> </td>
+			<td class="row{position() mod 2}"> <xsl:value-of select="jmsAlias"/> </td>
+			<td class="row{position() mod 2}"> <xsl:value-of select="jmsDestination"/> </td>
+			<td class="row{position() mod 2}"> <xsl:value-of select="jmsProcMode"/> </td>
+			<td class="row{position() mod 2}"> <xsl:value-of select="jmsMaxThreads"/> </td>
+			<td class="row{position() mod 2}"> <xsl:value-of select="jmsCurThreads"/> </td>
+			<td class="row{position() mod 2}"> <xsl:value-of select="jmsEnabled"/> </td>
+		</tr> 		 
+		<xsl:if test="@RECOMMENDATIONS='ALERT'"> 
+			<td> Not Implemented Yet </td>
+		</xsl:if>
+	    </xsl:for-each>
+	</table>
+      <TABLE border="1" width="100%">
+        <tr>
+             <td bgcolor="FF0000"> <xsl:value-of select="dashBoard/jmsTriggers/jmsError"/> </td>
+        </tr>
+      </TABLE>
+     </tr>
+
+
+	<tr>
+		<TABLE border="1" width="100%">
+                     <TR>
+                        <TD CLASS="heading" COLSPAN="5">Process Engine Services</TD>
+                     </TR>
+			   <TR>
+                        <TD CLASS="oddcol-l">Name (instances currently running)</TD>
+                        <TD CLASS="oddcol">Count</TD>
+                        <TD CLASS="oddcol">Last Ran</TD>
+
+                        <TD CLASS="oddcol">Cached</TD>
+                        <TD CLASS="oddcol">Prefetched</TD>
+			   </TR>
+			   <xsl:for-each select="dashBoard/services/serviceSetting">
+		            <tr>
+					<td class="row{position() mod 2}"> <xsl:value-of select="serviceName"/> </td>
+					<td class="row{position() mod 2}"> <xsl:value-of select="serviceAccessTotal"/> </td>
+					<td class="row{position() mod 2}"> <xsl:value-of select="serviceAccessLast"/> </td>
+					<td class="row{position() mod 2}"> <xsl:value-of select="serviceCached"/> </td>
+					<td class="row{position() mod 2}"> <xsl:value-of select="servicePrefetched"/> </td>
+				</tr>
+			<xsl:if test="@RECOMMENDATIONS='ALERT'">
+					<td> Not Implemented Yet </td>
+				</xsl:if>
+				</xsl:for-each>
+		</TABLE>
+	</tr>
+ 	</table>
+ </body>
+  </html>
+</xsl:template>
+
+</xsl:stylesheet>

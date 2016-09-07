@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:attribute name="name" type="xs:NMTOKEN" />
+
+	<xs:attribute name="dataType">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="text" />
+				<xs:enumeration value="date" />
+				<xs:enumeration value="numeric" />
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+
+	<xs:attribute name="datePrecision">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="MILLISECOND" />
+				<xs:enumeration value="SECOND" />
+				<xs:enumeration value="MINUTE" />
+				<xs:enumeration value="HOUR" />
+				<xs:enumeration value="DAY" />
+				<xs:enumeration value="MONTH" />
+				<xs:enumeration value="QUARTER" />
+				<xs:enumeration value="YEAR" />
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+
+	<xs:attribute name="aggregationInterval">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="ONE_MINUTE" />
+				<xs:enumeration value="FIVE_MINUTE" />
+				<xs:enumeration value="TEN_MINUTE" />
+				<xs:enumeration value="FIFTEEN_MINUTE"/>
+				<xs:enumeration value="THIRTY_MINUTE" />
+				<xs:enumeration value="ONE_HOUR" />
+				<xs:enumeration value="TWO_HOUR" />
+				<xs:enumeration value="FOUR_HOUR" />
+				<xs:enumeration value="EIGHT_HOUR" />
+				<xs:enumeration value="ONE_DAY" />
+				<xs:enumeration value="ONE_WEEK" />
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+
+	<xs:attribute name="column" type="xs:NMTOKEN" />
+
+	<xs:attribute name="status">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="success" />
+				<xs:enumeration value="warning" />
+				<xs:enumeration value="error" />
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+
+	<xs:element name="table">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="header" />
+				<xs:element ref="data" minOccurs="0" />
+				<xs:element ref="statusInformation" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="header">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="column" minOccurs="0" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="data">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="row" minOccurs="0" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="statusInformation">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="message" minOccurs="0" />
+				<xs:element ref="stacktrace" minOccurs="0" />
+			</xs:sequence>
+			<xs:attribute ref="status" use="required" />
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="column">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute ref="name" use="required"/>
+					<xs:attribute ref="dataType" use="required"/>
+					<xs:attribute ref="datePrecision" use="optional"/>
+					<xs:attribute ref="aggregationInterval" use="optional"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="message" type="xs:string"/>
+
+	<xs:element name="stacktrace" type="xs:string"/>
+
+	<xs:element name="row">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="text" minOccurs="0" maxOccurs="unbounded" />
+				<xs:element ref="date" minOccurs="0" maxOccurs="unbounded" />
+				<xs:element ref="numeric" minOccurs="0" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="text">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute ref="column" use="required" />
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="date">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:dateTime">
+					<xs:attribute ref="column" use="required" />
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="numeric">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:double">
+					<xs:attribute ref="column" use="required" />
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	
+</xs:schema>

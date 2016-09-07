@@ -1,0 +1,240 @@
+div.Title, caption.Title
+{
+  color: Black;
+  font-family: Arial, Helvetica, Verdana, Sans-Serif;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  margin-top: 9px;
+}
+
+div.Table_Cell, caption.Table_Cell
+{
+  color: Black;
+  font-family: Arial, Helvetica, Verdana, Sans-Serif;
+  font-size: 12px;
+  font-weight: normal;
+  margin-bottom: 6px;
+  margin-top: 9px;
+  vertical-align: top;
+}
+
+div.important, caption.important
+{
+  color: Black;
+  font-family: Arial, Helvetica, Verdana, Sans-Serif;
+  font-size: 12px;
+  font-weight: normal;
+  margin-bottom: 6px;
+  margin-left: 6px;
+  margin-top: 9px;
+}
+
+div.Section, caption.Section
+{
+  color: Black;
+  font-family: Arial, Helvetica, Verdana, Sans-Serif;
+  font-size: 12px;
+  font-weight: normal;
+  margin-bottom: 6px;
+  margin-top: 9px;
+}
+
+div.Section_Title, caption.Section_Title
+{
+  color: Black;
+  font-family: Arial, Helvetica, Verdana, Sans-Serif;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  margin-top: 18px;
+}
+
+div.Body, caption.Body
+{
+  color: Black;
+  font-family: Arial, Helvetica, Verdana, Sans-Serif;
+  font-size: 12px;
+  font-weight: normal;
+  margin-bottom: 6px;
+  margin-top: 9px;
+}
+
+div.norules-head, caption.norules-head
+{
+  border-bottom-color: #007096;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  color: Black;
+  font-family: Arial, Helvetica, Verdana, Sans-Serif;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 6px;
+  margin-right: 8px;
+  margin-top: 9px;
+}
+
+div.nonumber, caption.nonumber
+{
+  color: Black;
+  font-family: Arial, Helvetica, Verdana, Sans-Serif;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  margin-top: 9px;
+}
+
+div.Note, caption.Note
+{
+  color: Black;
+  font-family: Arial, Helvetica, Verdana, Sans-Serif;
+  font-size: 12px;
+  font-weight: normal;
+  margin-bottom: 6px;
+  margin-left: 6px;
+  margin-top: 9px;
+}
+
+div.List_1, caption.List_1
+{
+  color: Black;
+  font-family: Arial, Helvetica, Verdana, Sans-Serif;
+  font-size: 12px;
+  font-weight: normal;
+  margin-bottom: 6px;
+  margin-left: 18pt;
+  margin-top: 9px;
+  text-indent: -18pt;
+}
+
+div.List_1_Continued, caption.List_1_Continued
+{
+  color: Black;
+  font-family: Arial, Helvetica, Verdana, Sans-Serif;
+  font-size: 12px;
+  font-weight: normal;
+  margin-bottom: 6px;
+  margin-left: 18pt;
+  margin-top: 9px;
+}
+
+div.ChapterTOC_1, caption.ChapterTOC_1
+{
+  color: Black;
+  font-family: Arial, Helvetica, Verdana, Sans-Serif;
+  font-size: 12px;
+  font-weight: normal;
+  margin-bottom: 6px;
+  margin-left: 18pt;
+  margin-top: 9px;
+  text-indent: -18pt;
+}
+
+div.Heading_1, caption.Heading_1
+{
+  color: Black;
+  font-family: Arial, Helvetica, Verdana, Sans-Serif;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  margin-top: 9px;
+}
+
+div.Definition_Term, caption.Definition_Term
+{
+  color: Black;
+  font-family: Arial, Helvetica, Verdana, Sans-Serif;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 0px;
+  margin-left: 0pt;
+  margin-top: 9px;
+}
+
+div.Definition_Description, caption.Definition_Description
+{
+  color: Black;
+  font-family: Arial, Helvetica, Verdana, Sans-Serif;
+  font-size: 12px;
+  font-weight: normal;
+  margin-bottom: 6px;
+  margin-left: 0pt;
+  margin-top: 0px;
+}
+
+div.Link_List_Title, caption.Link_List_Title
+{
+  color: Black;
+  font-family: Arial, Helvetica, Verdana, Sans-Serif;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  margin-top: 18px;
+}
+
+div.heading-no-quotes, caption.heading-no-quotes
+{
+  color: #804000;
+  font-family: Calibri;
+  font-size: 12pt;
+  margin-bottom: 6pt;
+  margin-top: 6pt;
+}
+
+div.internalheadrule, caption.internalheadrule
+{
+  border-bottom-color: #007096;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  color: Black;
+  font-family: Arial, Helvetica, Verdana, Sans-Serif;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 6px;
+  margin-right: 8px;
+  margin-top: 0px;
+  vertical-align: top;
+}
+
+span.Citation
+{
+  font-style: italic;
+}
+
+span.uicontrol
+{
+  font-weight: bold;
+}
+
+span.inlinetitle
+{
+  font-weight: bold;
+}
+
+span.emphasis
+{
+  font-style: italic;
+}
+
+span.codeph
+{
+  font-family: Courier, 'Courier New', Monospace;
+  font-size: 13px;
+}
+
+span.varname
+{
+  font-style: italic;
+}
+
+span.Bold
+{
+  font-weight: bold;
+}
+
+table.note1
+{
+  background-color: #E6FAFF;
+  margin-bottom: 8px;
+}
+

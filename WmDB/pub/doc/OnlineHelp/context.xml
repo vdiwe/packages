@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<help xmlns:xs="http://www.w3.org/2001/XMLSchema" product="WmDB">
+   <topic id="DB_AliasMgmntScrn"
+          url="/WmRoot/doc/OnlineHelp/index.html#context/wmdb-onlinehelp/DB_AliasMgmntScrn"
+          width="650"/>
+   <topic id="DB_NewDBAliasScrn"
+          url="/WmRoot/doc/OnlineHelp/index.html#context/wmdb-onlinehelp/DB_NewDBAliasScrn"
+          width="650"/>
+   <topic id="DB_EditAliasInfoScrn"
+          url="/WmRoot/doc/OnlineHelp/index.html#context/wmdb-onlinehelp/DB_EditAliasInfoScrn"
+          width="650"/>
+   <topic id="DB_ChgPasswordScrn"
+          url="/WmRoot/doc/OnlineHelp/index.html#context/wmdb-onlinehelp/DB_ChgPasswordScrn"
+          width="650"/>
+   <topic id="DB_SpecifyConnectParamsScrn"
+          url="/WmRoot/doc/OnlineHelp/index.html#context/wmdb-onlinehelp/DB_SpecifyConnectParamsScrn"
+          width="650"/>
+   <topic id="DB_TablesInScrn"
+          url="/WmRoot/doc/OnlineHelp/index.html#context/wmdb-onlinehelp/DB_TablesInScrn"
+          width="650"/>
+   <topic id="DB_ColumnsInScrn"
+          url="/WmRoot/doc/OnlineHelp/index.html#context/wmdb-onlinehelp/DB_ColumnsInScrn"
+          width="650"/>
+   <topic id="DB_GenNewDBScrn"
+          url="/WmRoot/doc/OnlineHelp/index.html#context/wmdb-onlinehelp/DB_GenNewDBScrn"
+          width="650"/>
+   <topic id="DB_InputBindGenScrn"
+          url="/WmRoot/doc/OnlineHelp/index.html#context/wmdb-onlinehelp/DB_InputBindGenScrn"
+          width="650"/>
+</help>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="shared">CQkKCQoJCgkKCQo=</value>
+  <value name="encodeutf8">true</value>
+  <array name="imports" type="value" depth="1">
+    <value>com.softwareag.rules.businessrulespackage.targetruntimes.ProjectLogManager</value>
+    <value>com.softwareag.rules.runtime.ProjectInformation</value>
+    <value>com.softwareag.rules.runtime.is.RESFacadeISWrapper</value>
+    <value>com.softwareag.rules.runtime.is.WrapperUtil</value>
+    <value>com.wm.data.IData</value>
+    <value>com.softwareag.rules.runtime.is.RuleArchiveHandlerISWrapper</value>
+  </array>
+</Values>

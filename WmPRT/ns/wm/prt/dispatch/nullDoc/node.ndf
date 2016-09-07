@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <record name="record" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="node_nsName">wm.prt.dispatch:nullDoc</value>
+    <value name="node_pkg">WmPRT</value>
+    <record name="node_hints" javaclass="com.wm.util.Values">
+      <null name="CURRENT_NODE"/>
+    </record>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <list name="rec_fields">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">_env</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <value name="nillable">true</value>
+        <value name="rec_ref">pub.publish:envelope</value>
+      </record>
+    </list>
+    <record name="eventDescription" javaclass="com.wm.util.Values">
+      <value name="brokerEventTypeName">wm::is::wm::prt::dispatch::nullDoc</value>
+      <value name="timeToLive">0</value>
+      <value name="storageType">guaranteed</value>
+    </record>
+  </record>
+</Values>

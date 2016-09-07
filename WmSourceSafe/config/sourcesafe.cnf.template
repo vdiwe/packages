@@ -1,0 +1,16 @@
+# webMethods, Inc. Version Control Integration Feature
+# This is an example configuration file for Visual SourceSafe.
+
+# A configuration file named "sourcesafe.cnf" must be present in the 
+# \config directory of the WmSourceSafe package.
+
+# For more information, see the webMethods Version Control System
+# Integration Developer's Guide.
+
+# VSS client and server settings. Specify the working folder
+# on your Integration Server, and the project name in your
+# VSS repository:
+
+watt.vcs.vss.folder=
+watt.vcs.vss.project=
+watt.vcs.vss.allowmultiplecheckouts=

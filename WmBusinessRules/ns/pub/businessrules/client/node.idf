@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="encodeutf8">true</value>
+  <array name="imports" type="value" depth="1">
+    <value>com.softwareag.rules.runtime.is.consumer.IRuleConsumerISWrapper</value>
+    <value>com.softwareag.rules.runtime.is.consumer.RuleConsumerISWrapperFactory</value>
+    <value>com.wm.data.IData</value>
+  </array>
+</Values>

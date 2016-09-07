@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="US-ASCII"?><SoftwareAG_License>
+<Component Id="SalesInfo">
+<SerialNumber>0000230787</SerialNumber>
+<LicenseKey>5062A975EC9FAD12DA2764FFFF11A08B</LicenseKey>
+<CustomerID>8104272</CustomerID>
+<CustomerName>Lexmark International, Inc.</CustomerName>
+<ContractDetails>2039379</ContractDetails>
+<ContractPosNumber>000980</ContractPosNumber>
+<LicenseTypeDetails>External</LicenseTypeDetails>
+<AutoCallHome/>
+</Component>
+<Component Id="ProductInfo">
+<ExpirationDate>2017/08/22</ExpirationDate>
+<OS>Linux</OS>
+<ProductCode>WOK</ProductCode>
+<ProductID/>
+<ProductName>Rules</ProductName>
+<ProductVersion>9.8</ProductVersion>
+<Usage>Production</Usage>
+<RenewalDate/>
+<HigherLevPosNr>000730</HigherLevPosNr>
+<HigherLevProdCode>WMPC1</HigherLevProdCode>
+<HigherLevProdName>BPMS Customer Edition Bundle (WMPC1)</HigherLevProdName>
+</Component>
+<Component Id="RulesServer">
+<ProductCode>WOK</ProductCode>
+<ProductVersion>9.8</ProductVersion>
+<Container>IS</Container>
+</Component>
+<Component Id="RulesFeatures">
+<PublicAPI>no</PublicAPI>
+<ProcessActions>no</ProcessActions>
+<ServiceActions>no</ServiceActions>
+<CreateDataActions>no</CreateDataActions>
+<ExternalEventRules>no</ExternalEventRules>
+<SynchronousInvokeFromBPM>yes</SynchronousInvokeFromBPM>
+</Component>
+<Component Id="RulesEdition">
+<Edition>webMethods</Edition>
+<AdditionalFeatures>no</AdditionalFeatures>
+</Component>
+<Component Id="LicenseInfo">
+<PriceUnit>CoreF</PriceUnit>
+<PriceQuantity>99999</PriceQuantity>
+<TypeOfInstallation>Production</TypeOfInstallation>
+<LicenseType>Standard License</LicenseType>
+<ExtendedRights>TPD,</ExtendedRights>
+<LicenseVersion>1.2</LicenseVersion>
+<Metering/>
+</Component>
+</SoftwareAG_License>

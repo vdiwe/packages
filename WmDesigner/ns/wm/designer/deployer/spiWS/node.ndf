@@ -1,0 +1,1039 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="node_type">webServiceDescriptor</value>
+  <value name="node_nsName">wm.designer.deployer:spiWS</value>
+  <value name="node_pkg">WmDesigner</value>
+  <value name="is_public">false</value>
+  <Boolean name="inbound">true</Boolean>
+  <Boolean name="WSICompliant">false</Boolean>
+  <value name="SOAPProtocol">SOAP 1.2 Protocol</value>
+  <value name="targetNamespace">http://www.webmethods.com/provider/DeployerPlugin2/</value>
+  <Boolean name="attachmentEnabled">false</Boolean>
+  <number name="mtomThreshold" type="Integer">0</number>
+  <value name="externalWSDL">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;wsdl:definitions xmlns:tns="http://www.webmethods.com/provider/DeployerPlugin2/" xmlns:HDR1="http://www.webmethods.com/DeployerPlugin2/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapjms="http://www.w3.org/2008/07/soap/bindings/JMS/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="DeployerPlugin2" targetNamespace="http://www.webmethods.com/provider/DeployerPlugin2/"&gt;
+  &lt;wsdl:types&gt;
+    &lt;xsd:schema xmlns:dx="http://www.webmethods.com/DeployerPlugin2/" xmlns:tns="http://www.webmethods.com/provider/DeployerPlugin2/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.webmethods.com/provider/DeployerPlugin2/"&gt;
+          &lt;xsd:import namespace="http://www.webmethods.com/DeployerPlugin2/"/&gt;
+          &lt;xsd:complexType name="GetConnectionInfoRequest"&gt;
+            &lt;xsd:sequence&gt;
+              &lt;xsd:element minOccurs="0" name="serverIdentifier" nillable="true" type="xsd:string"/&gt;
+              &lt;xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:connectionProperties"/&gt;
+              &lt;xsd:element minOccurs="0" name="auth" nillable="true" type="tns:auth"/&gt;
+              &lt;xsd:element name="address" nillable="true" type="xsd:string"/&gt;
+              &lt;xsd:element name="namespace" nillable="true" type="xsd:string"/&gt;
+            &lt;/xsd:sequence&gt;
+          &lt;/xsd:complexType&gt;
+          &lt;xsd:complexType name="auth"&gt;
+            &lt;xsd:sequence&gt;
+              &lt;xsd:element minOccurs="0" name="type" nillable="true" type="xsd:string"/&gt;
+              &lt;xsd:element name="user" nillable="true" type="xsd:string"/&gt;
+              &lt;xsd:element minOccurs="0" name="pass" nillable="true" type="xsd:string"/&gt;
+            &lt;/xsd:sequence&gt;
+          &lt;/xsd:complexType&gt;
+          &lt;xsd:complexType name="GetConnectionInfoResponse"&gt;
+            &lt;xsd:sequence&gt;
+              &lt;xsd:element minOccurs="0" name="message" nillable="true" type="xsd:string"/&gt;
+              &lt;xsd:element minOccurs="0" name="status" nillable="true" type="xsd:int"/&gt;
+              &lt;xsd:element minOccurs="0" name="host" nillable="true" type="xsd:string"/&gt;
+              &lt;xsd:element minOccurs="0" name="port" nillable="true" type="xsd:string"/&gt;
+              &lt;xsd:element minOccurs="0" name="user" nillable="true" type="xsd:string"/&gt;
+              &lt;xsd:element minOccurs="0" name="password" nillable="true" type="xsd:string"/&gt;
+              &lt;xsd:element minOccurs="0" name="useSSL" nillable="true" type="xsd:boolean"/&gt;
+              &lt;xsd:element minOccurs="0" name="reuseConnectionInfo" nillable="true" type="xsd:boolean"/&gt;
+              &lt;xsd:element minOccurs="0" name="SOAP-FAULT" nillable="true" type="tns:SOAP-FAULT"/&gt;
+            &lt;/xsd:sequence&gt;
+          &lt;/xsd:complexType&gt;
+          &lt;xsd:complexType name="SOAP-FAULT"&gt;
+            &lt;xsd:sequence&gt;
+              &lt;xsd:element minOccurs="0" name="faultcode" nillable="true" type="xsd:string"/&gt;
+              &lt;xsd:element minOccurs="0" name="faultstring" nillable="true" type="xsd:string"/&gt;
+              &lt;xsd:element minOccurs="0" name="faultactor" nillable="true" type="xsd:string"/&gt;
+              &lt;xsd:element minOccurs="0" name="detail" nillable="true" type="tns:detail"/&gt;
+            &lt;/xsd:sequence&gt;
+          &lt;/xsd:complexType&gt;
+          &lt;xsd:complexType name="detail"&gt;
+            &lt;xsd:sequence&gt;
+              &lt;xsd:any processContents="lax"/&gt;
+            &lt;/xsd:sequence&gt;
+            &lt;xsd:anyAttribute processContents="lax"/&gt;
+          &lt;/xsd:complexType&gt;
+          &lt;xsd:complexType name="GetDependenciesRequest"&gt;
+            &lt;xsd:sequence&gt;
+              &lt;xsd:element minOccurs="0" name="objectKey" nillable="true" type="dx:ObjectIdentifierType"/&gt;
+              &lt;xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:connectionProperties"/&gt;
+              &lt;xsd:element minOccurs="0" name="auth" nillable="true" type="tns:auth"/&gt;
+              &lt;xsd:element name="address" nillable="true" type="xsd:string"/&gt;
+              &lt;xsd:element name="namespace" nillable="true" type="xsd:string"/&gt;
+            &lt;/xsd:sequence&gt;
+          &lt;/xsd:complexType&gt;
+          &lt;xsd:complexType name="GetDependenciesResponse"&gt;
+            &lt;xsd:sequence&gt;
+              &lt;xsd:element minOccurs="0" name="message" nillable="true" type="xsd:string"/&gt;
+              &lt;xsd:element minOccurs="0" name="status" nillable="true" type="xsd:int"/&gt;
+              &lt;xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:dependencies"/&gt;
+              &lt;xsd:element minOccurs="0" name="SOAP-FAULT" nillable="true" type="tns:SOAP-FAULT"/&gt;
+            &lt;/xsd:sequence&gt;
+          &lt;/xsd:complexType&gt;
+          &lt;xsd:complexType name="GetObjectVarSubRequest"&gt;
+            &lt;xsd:sequence&gt;
+              &lt;xsd:element minOccurs="0" name="objectKey" nillable="true" type="dx:ObjectIdentifierType"/&gt;
+              &lt;xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:connectionProperties"/&gt;
+              &lt;xsd:element minOccurs="0" name="auth" nillable="true" type="tns:auth"/&gt;
+              &lt;xsd:element name="address" nillable="true" type="xsd:string"/&gt;
+              &lt;xsd:element name="namespace" nillable="true" type="xsd:string"/&gt;
+            &lt;/xsd:sequence&gt;
+          &lt;/xsd:complexType&gt;
+          &lt;xsd:complexType name="GetObjectVarSubResponse"&gt;
+            &lt;xsd:sequence&gt;
+              &lt;xsd:element minOccurs="0" name="message" nillable="true" type="xsd:string"/&gt;
+              &lt;xsd:element minOccurs="0" name="status" nillable="true" type="xsd:int"/&gt;
+              &lt;xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:varSubFields"/&gt;
+              &lt;xsd:element minOccurs="0" name="SOAP-FAULT" nillable="true" type="tns:SOAP-FAULT"/&gt;
+            &lt;/xsd:sequence&gt;
+          &lt;/xsd:complexType&gt;
+          &lt;xsd:complexType name="DeployObjectsWithVarsubRequest"&gt;
+            &lt;xsd:sequence&gt;
+              &lt;xsd:element minOccurs="0" name="simulate" nillable="true" type="xsd:boolean"/&gt;
+              &lt;xsd:element minOccurs="0" name="rollback" nillable="true" type="xsd:boolean"/&gt;
+              &lt;xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:pluginProjectProperties"/&gt;
+              &lt;xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:objects"/&gt;
+              &lt;xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:connectionProperties"/&gt;
+              &lt;xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:varsubItems"/&gt;
+              &lt;xsd:element minOccurs="0" name="auth" nillable="true" type="tns:auth"/&gt;
+              &lt;xsd:element name="address" nillable="true" type="xsd:string"/&gt;
+              &lt;xsd:element name="namespace" nillable="true" type="xsd:string"/&gt;
+            &lt;/xsd:sequence&gt;
+          &lt;/xsd:complexType&gt;
+          &lt;xsd:complexType name="DeployObjectsResponse"&gt;
+            &lt;xsd:sequence&gt;
+              &lt;xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:messages"/&gt;
+              &lt;xsd:element minOccurs="0" name="SOAP-FAULT" nillable="true" type="tns:SOAP-FAULT"/&gt;
+            &lt;/xsd:sequence&gt;
+          &lt;/xsd:complexType&gt;
+          &lt;xsd:complexType name="DeployObjectsRequest"&gt;
+            &lt;xsd:sequence&gt;
+              &lt;xsd:element minOccurs="0" name="simulate" nillable="true" type="xsd:boolean"/&gt;
+              &lt;xsd:element minOccurs="0" name="rollback" nillable="true" type="xsd:boolean"/&gt;
+              &lt;xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:pluginProjectProperties"/&gt;
+              &lt;xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:objects"/&gt;
+              &lt;xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:connectionProperties"/&gt;
+              &lt;xsd:element minOccurs="0" name="auth" nillable="true" type="tns:auth"/&gt;
+              &lt;xsd:element name="address" nillable="true" type="xsd:string"/&gt;
+              &lt;xsd:element name="namespace" nillable="true" type="xsd:string"/&gt;
+            &lt;/xsd:sequence&gt;
+          &lt;/xsd:complexType&gt;
+          
+          &lt;xsd:complexType name="DeployObjectsWithACDLResponse"&gt;
+            &lt;xsd:sequence&gt;              
+              &lt;xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:acdlMessages"/&gt;
+              &lt;xsd:element minOccurs="0" name="SOAP-FAULT" nillable="true" type="tns:SOAP-FAULT"/&gt;
+            &lt;/xsd:sequence&gt;
+          &lt;/xsd:complexType&gt;
+          &lt;xsd:complexType name="DeployObjectsWithACDLRequest"&gt;
+            &lt;xsd:sequence&gt; 
+              &lt;xsd:element minOccurs="0" name="simulate" nillable="true" type="xsd:boolean"/&gt;
+              &lt;xsd:element minOccurs="0" name="rollback" nillable="true" type="xsd:boolean"/&gt;
+              &lt;xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:pluginProjectProperties"/&gt;
+              &lt;xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:assetArtifacts"/&gt;
+              &lt;xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:connectionProperties"/&gt;
+              &lt;xsd:element minOccurs="0" name="auth" nillable="true" type="tns:auth"/&gt;
+              &lt;xsd:element name="address" nillable="true" type="xsd:string"/&gt;
+              &lt;xsd:element name="namespace" nillable="true" type="xsd:string"/&gt; 
+            &lt;/xsd:sequence&gt;
+          &lt;/xsd:complexType&gt;
+          
+          &lt;xsd:complexType name="PingRequest"&gt;
+            &lt;xsd:sequence&gt;
+              &lt;xsd:element minOccurs="0" name="type" nillable="true" type="xsd:string"/&gt;
+              &lt;xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:connectionProperties"/&gt;
+              &lt;xsd:element minOccurs="0" name="auth" nillable="true" type="tns:auth"/&gt;
+              &lt;xsd:element name="address" nillable="true" type="xsd:string"/&gt;
+              &lt;xsd:element name="namespace" nillable="true" type="xsd:string"/&gt;
+            &lt;/xsd:sequence&gt;
+          &lt;/xsd:complexType&gt;
+          &lt;xsd:complexType name="PingResponse"&gt;
+            &lt;xsd:sequence&gt;
+              &lt;xsd:element minOccurs="0" name="version" nillable="true" type="xsd:string"/&gt;
+              &lt;xsd:element minOccurs="0" name="SOAP-FAULT" nillable="true" type="tns:SOAP-FAULT"/&gt;
+            &lt;/xsd:sequence&gt;
+          &lt;/xsd:complexType&gt;
+          &lt;xsd:complexType name="GetObjectsRequest"&gt;
+            &lt;xsd:sequence&gt;
+              &lt;xsd:element minOccurs="0" name="checkpoint" nillable="true" type="xsd:boolean"/&gt;
+              &lt;xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:pluginProjectProperties"/&gt;
+              &lt;xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:objectKeys"/&gt;
+              &lt;xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:connectionProperties"/&gt;
+              &lt;xsd:element minOccurs="0" name="auth" nillable="true" type="tns:auth"/&gt;
+              &lt;xsd:element name="address" nillable="true" type="xsd:string"/&gt;
+              &lt;xsd:element name="namespace" nillable="true" type="xsd:string"/&gt;
+            &lt;/xsd:sequence&gt;
+          &lt;/xsd:complexType&gt;
+          &lt;xsd:complexType name="GetObjectsResponse"&gt;
+            &lt;xsd:sequence&gt;
+              &lt;xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:messages"/&gt;
+              &lt;xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:objects"/&gt;
+              &lt;xsd:element minOccurs="0" name="SOAP-FAULT" nillable="true" type="tns:SOAP-FAULT"/&gt;
+            &lt;/xsd:sequence&gt;
+          &lt;/xsd:complexType&gt;
+          
+          &lt;xsd:complexType name="GetObjectsWithACDLRequest"&gt;
+            &lt;xsd:sequence&gt;
+              &lt;xsd:element minOccurs="0" name="checkpoint" nillable="true" type="xsd:boolean"/&gt;
+              &lt;xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:pluginProjectProperties"/&gt;
+              &lt;xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:objectKeys"/&gt;
+              &lt;xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:connectionProperties"/&gt;
+              &lt;xsd:element minOccurs="0" name="auth" nillable="true" type="tns:auth"/&gt;
+              &lt;xsd:element name="address" nillable="true" type="xsd:string"/&gt;
+              &lt;xsd:element name="namespace" nillable="true" type="xsd:string"/&gt;
+            &lt;/xsd:sequence&gt;
+          &lt;/xsd:complexType&gt;
+          &lt;xsd:complexType name="GetObjectsWithACDLResponse"&gt;
+            &lt;xsd:sequence&gt;
+              &lt;xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:acdlMessages"/&gt;
+              &lt;xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:assetArtifacts"/&gt;
+              &lt;xsd:element minOccurs="0" name="SOAP-FAULT" nillable="true" type="tns:SOAP-FAULT"/&gt;
+            &lt;/xsd:sequence&gt;
+          &lt;/xsd:complexType&gt;
+          
+          &lt;xsd:complexType name="VerifyObjectRequest"&gt;
+            &lt;xsd:sequence&gt;
+              &lt;xsd:element minOccurs="0" name="objectKey" nillable="true" type="dx:ObjectIdentifierType"/&gt;
+              &lt;xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:connectionProperties"/&gt;
+              &lt;xsd:element minOccurs="0" name="auth" nillable="true" type="tns:auth"/&gt;
+              &lt;xsd:element name="address" nillable="true" type="xsd:string"/&gt;
+              &lt;xsd:element name="namespace" nillable="true" type="xsd:string"/&gt;
+            &lt;/xsd:sequence&gt;
+          &lt;/xsd:complexType&gt;
+          &lt;xsd:complexType name="VerifyObjectResponse"&gt;
+            &lt;xsd:sequence&gt;
+              &lt;xsd:element minOccurs="0" name="message" nillable="true" type="xsd:string"/&gt;
+              &lt;xsd:element minOccurs="0" name="status" nillable="true" type="xsd:int"/&gt;
+              &lt;xsd:element minOccurs="0" name="exists" nillable="true" type="xsd:boolean"/&gt;
+              &lt;xsd:element minOccurs="0" name="SOAP-FAULT" nillable="true" type="tns:SOAP-FAULT"/&gt;
+            &lt;/xsd:sequence&gt;
+          &lt;/xsd:complexType&gt;
+          &lt;xsd:complexType name="ListObjectsRequest"&gt;
+            &lt;xsd:sequence&gt;
+              &lt;xsd:element minOccurs="0" name="objectType" nillable="true" type="xsd:string"/&gt;
+              &lt;xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:connectionProperties"/&gt;
+              &lt;xsd:element minOccurs="0" name="auth" nillable="true" type="tns:auth"/&gt;
+              &lt;xsd:element name="address" nillable="true" type="xsd:string"/&gt;
+              &lt;xsd:element name="namespace" nillable="true" type="xsd:string"/&gt;
+            &lt;/xsd:sequence&gt;
+          &lt;/xsd:complexType&gt;
+          &lt;xsd:complexType name="ListObjectsResponse"&gt;
+            &lt;xsd:sequence&gt;
+              &lt;xsd:element minOccurs="0" name="message" nillable="true" type="xsd:string"/&gt;
+              &lt;xsd:element minOccurs="0" name="status" nillable="true" type="xsd:int"/&gt;
+              &lt;xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:objectKeys"/&gt;
+              &lt;xsd:element minOccurs="0" name="SOAP-FAULT" nillable="true" type="tns:SOAP-FAULT"/&gt;
+            &lt;/xsd:sequence&gt;
+          &lt;/xsd:complexType&gt;
+  		    &lt;xsd:element name="DeployObjectsRequest" type="tns:DeployObjectsRequest"/&gt;
+			&lt;xsd:element name="DeployObjectsResponse" type="tns:DeployObjectsResponse"/&gt;
+			&lt;xsd:element name="DeployObjectsWithACDLRequest" type="tns:DeployObjectsWithACDLRequest"/&gt;
+			&lt;xsd:element name="DeployObjectsWithACDLResponse" type="tns:DeployObjectsWithACDLResponse"/&gt;
+			&lt;xsd:element name="DeployObjectsWithVarsubRequest" type="tns:DeployObjectsWithVarsubRequest"/&gt;
+			&lt;xsd:element name="GetConnectionInfoRequest" type="tns:GetConnectionInfoRequest"/&gt;
+			&lt;xsd:element name="GetConnectionInfoResponse" type="tns:GetConnectionInfoResponse"/&gt;
+			&lt;xsd:element name="GetDependenciesRequest" type="tns:GetDependenciesRequest"/&gt;
+			&lt;xsd:element name="GetDependenciesResponse" type="tns:GetDependenciesResponse"/&gt;
+			&lt;xsd:element name="GetObjectsRequest" type="tns:GetObjectsRequest"/&gt;
+			&lt;xsd:element name="GetObjectsResponse" type="tns:GetObjectsResponse"/&gt;
+			&lt;xsd:element name="GetObjectsWithACDLRequest" type="tns:GetObjectsWithACDLRequest"/&gt;
+			&lt;xsd:element name="GetObjectsWithACDLResponse" type="tns:GetObjectsWithACDLResponse"/&gt;
+			&lt;xsd:element name="GetObjectVarSubRequest" type="tns:GetObjectVarSubRequest"/&gt;
+			&lt;xsd:element name="GetObjectVarSubResponse" type="tns:GetObjectVarSubResponse"/&gt;
+			&lt;xsd:element name="ListObjectsRequest" type="tns:ListObjectsRequest"/&gt;
+			&lt;xsd:element name="ListObjectsResponse" type="tns:ListObjectsResponse"/&gt;
+			&lt;xsd:element name="PingRequest" type="tns:PingRequest"/&gt;
+			&lt;xsd:element name="PingResponse" type="tns:PingResponse"/&gt;
+			&lt;xsd:element name="VerifyObjectRequest" type="tns:VerifyObjectRequest"/&gt;
+			&lt;xsd:element name="VerifyObjectResponse" type="tns:VerifyObjectResponse"/&gt;
+	&lt;/xsd:schema&gt;
+    &lt;xsd:schema xmlns:dx="http://www.webmethods.com/DeployerPlugin2/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.webmethods.com/DeployerPlugin2/"&gt;
+          &lt;xsd:element name="connectionProperties" type="dx:PropertyType"/&gt;
+          &lt;xsd:element name="dependencies" type="dx:ObjectDependencyType"/&gt;
+          &lt;xsd:element name="varSubFields" type="dx:PropertyType"/&gt;
+          &lt;xsd:element name="pluginProjectProperties" type="dx:PropertyType"/&gt;
+          &lt;xsd:element name="objects" type="dx:GetObjectType"/&gt;
+          &lt;xsd:element name="assetArtifacts" type="dx:AssetArtifactsType"/&gt;
+          &lt;xsd:element name="varsubs" type="dx:PropertyType"/&gt;
+          &lt;xsd:element name="varsubItems" type="dx:VarsubItemType"/&gt;
+          &lt;xsd:element name="messages" type="dx:ReportMessageType"/&gt;
+	  &lt;xsd:element name="acdlMessages" type="dx:ACDLReportMessageType"/&gt;
+          &lt;xsd:element name="objectKeys" type="dx:FullObjectType"/&gt;
+          &lt;xsd:complexType name="PropertyType"&gt;
+            &lt;xsd:sequence&gt;
+              &lt;xsd:element name="key" type="xsd:string"/&gt;
+              &lt;xsd:element name="value" type="xsd:string"/&gt;
+            &lt;/xsd:sequence&gt;
+          &lt;/xsd:complexType&gt;
+          &lt;xsd:complexType name="AssetArtifactsType"&gt;
+				&lt;xsd:sequence&gt;
+					&lt;xsd:element name="assetBinaryFile" type="xsd:base64Binary"/&gt;
+					&lt;xsd:element name="acdlFile" type="xsd:base64Binary"/&gt;
+				&lt;/xsd:sequence&gt;
+			&lt;/xsd:complexType&gt;
+          &lt;xsd:complexType name="ObjectIdentifierType"&gt;
+            &lt;xsd:sequence&gt;
+              &lt;xsd:element name="type" type="xsd:string"/&gt;
+              &lt;xsd:element name="id" type="xsd:string"/&gt;
+            &lt;/xsd:sequence&gt;
+          &lt;/xsd:complexType&gt;
+          &lt;xsd:complexType name="ObjectDependencyType"&gt;
+            &lt;xsd:sequence&gt;
+              &lt;xsd:element name="objectKey" type="dx:ObjectType"/&gt;
+              &lt;xsd:element minOccurs="0" name="serverIdentifier" nillable="true" type="xsd:string"/&gt;
+            &lt;/xsd:sequence&gt;
+          &lt;/xsd:complexType&gt;
+          &lt;xsd:complexType name="ObjectType"&gt;
+            &lt;xsd:sequence&gt;
+              &lt;xsd:element name="type" type="xsd:string"/&gt;
+              &lt;xsd:element name="id" type="xsd:string"/&gt;
+              &lt;xsd:element name="name" type="xsd:string"/&gt;
+              &lt;xsd:element maxOccurs="unbounded" minOccurs="0" name="path" nillable="true" type="xsd:string"/&gt;
+              &lt;xsd:element minOccurs="0" name="parentId" nillable="true" type="xsd:string"/&gt;
+              &lt;xsd:element name="fullName" type="xsd:string"/&gt;
+            &lt;/xsd:sequence&gt;
+          &lt;/xsd:complexType&gt;
+          &lt;xsd:complexType name="DeployObjectType"&gt;
+            &lt;xsd:sequence&gt;
+              &lt;xsd:element name="objectKey" type="dx:ObjectType"/&gt;
+              &lt;xsd:element name="sequence" type="xsd:int"/&gt;
+              &lt;xsd:element name="version" type="xsd:string"/&gt;
+              &lt;xsd:element name="objectData" type="xsd:base64Binary"/&gt;
+              &lt;xsd:element name="missing" type="xsd:boolean"/&gt;
+            &lt;/xsd:sequence&gt;
+          &lt;/xsd:complexType&gt;
+          &lt;xsd:complexType name="VarsubItemType"&gt;
+            &lt;xsd:sequence&gt;
+              &lt;xsd:element name="type" type="xsd:string"/&gt;
+              &lt;xsd:element name="name" type="xsd:string"/&gt;
+              &lt;xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:varsubs"/&gt;
+            &lt;/xsd:sequence&gt;
+          &lt;/xsd:complexType&gt;
+          &lt;xsd:complexType name="ReportMessageType"&gt;
+            &lt;xsd:sequence&gt;
+              &lt;xsd:element name="type" type="xsd:int"/&gt;
+              &lt;xsd:element name="text" type="xsd:string"/&gt;
+              &lt;xsd:element name="timestamp" type="xsd:dateTime"/&gt;
+            &lt;/xsd:sequence&gt;
+          &lt;/xsd:complexType&gt;
+	   &lt;xsd:complexType name="ACDLReportMessageType"&gt;
+            &lt;xsd:sequence&gt;
+              &lt;xsd:element name="type" type="xsd:int"/&gt;
+              &lt;xsd:element name="text" type="xsd:string"/&gt;
+              &lt;xsd:element name="timestamp" type="xsd:dateTime"/&gt;
+	      &lt;xsd:element name="assetName" type="xsd:string" minOccurs="0"/&gt;
+	      &lt;xsd:element name="assetType" type="xsd:string" minOccurs="0"/&gt;
+            &lt;/xsd:sequence&gt;
+          &lt;/xsd:complexType&gt;
+          &lt;xsd:complexType name="GetObjectType"&gt;
+            &lt;xsd:sequence&gt;
+              &lt;xsd:element name="objectKey" type="dx:ObjectIdentifierType"/&gt;
+              &lt;xsd:element name="sequence" type="xsd:int"/&gt;
+              &lt;xsd:element name="version" type="xsd:string"/&gt;
+              &lt;xsd:element name="objectData" type="xsd:base64Binary"/&gt;
+              &lt;xsd:element name="missing" type="xsd:boolean"/&gt;
+            &lt;/xsd:sequence&gt;
+          &lt;/xsd:complexType&gt;
+          &lt;xsd:complexType name="FullObjectType"&gt;
+            &lt;xsd:sequence&gt;
+              &lt;xsd:element name="type" type="xsd:string"/&gt;
+              &lt;xsd:element name="id" type="xsd:string"/&gt;
+              &lt;xsd:element name="name" type="xsd:string"/&gt;
+              &lt;xsd:element maxOccurs="unbounded" minOccurs="0" name="path" nillable="true" type="xsd:string"/&gt;
+              &lt;xsd:element minOccurs="0" name="parentId" nillable="true" type="xsd:string"/&gt;
+              &lt;xsd:element name="fullName" type="xsd:string"/&gt;
+            &lt;/xsd:sequence&gt;
+          &lt;/xsd:complexType&gt;
+        	&lt;/xsd:schema&gt;
+  &lt;/wsdl:types&gt;
+  &lt;wsdl:message name="DeployerPlugin2_DeployObjectsResponse"&gt;
+    &lt;wsdl:part name="parameters" element="tns:DeployObjectsResponse"&gt;
+    &lt;/wsdl:part&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:message name="DeployerPlugin2_DeployObjectsWithACDLResponse"&gt;
+    &lt;wsdl:part name="parameters" element="tns:DeployObjectsWithACDLResponse"&gt;
+    &lt;/wsdl:part&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:message name="DeployerPlugin2_GetObjectsRequest"&gt;
+    &lt;wsdl:part name="parameters" element="tns:GetObjectsRequest"&gt;
+    &lt;/wsdl:part&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:message name="DeployerPlugin2_GetObjectsWithACDLRequest"&gt;
+    &lt;wsdl:part name="parameters" element="tns:GetObjectsWithACDLRequest"&gt;
+    &lt;/wsdl:part&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:message name="DeployerPlugin2_ListObjectsResponse"&gt;
+    &lt;wsdl:part name="parameters" element="tns:ListObjectsResponse"&gt;
+    &lt;/wsdl:part&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:message name="DeployerPlugin2_DeployObjectsRequest"&gt;
+    &lt;wsdl:part name="parameters" element="tns:DeployObjectsRequest"&gt;
+    &lt;/wsdl:part&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:message name="DeployerPlugin2_DeployObjectsWithACDLRequest"&gt;
+    &lt;wsdl:part name="parameters" element="tns:DeployObjectsWithACDLRequest"&gt;
+    &lt;/wsdl:part&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:message name="DeployerPlugin2_GetObjectsResponse"&gt;
+    &lt;wsdl:part name="parameters" element="tns:GetObjectsResponse"&gt;
+    &lt;/wsdl:part&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:message name="DeployerPlugin2_GetObjectsWithACDLResponse"&gt;
+    &lt;wsdl:part name="parameters" element="tns:GetObjectsWithACDLResponse"&gt;
+    &lt;/wsdl:part&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:message name="DeployerPlugin2_GetDependenciesResponse"&gt;
+    &lt;wsdl:part name="parameters" element="tns:GetDependenciesResponse"&gt;
+    &lt;/wsdl:part&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:message name="DeployerPlugin2_VerifyObjectRequest"&gt;
+    &lt;wsdl:part name="parameters" element="tns:VerifyObjectRequest"&gt;
+    &lt;/wsdl:part&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:message name="DeployerPlugin2_PingResponse"&gt;
+    &lt;wsdl:part name="parameters" element="tns:PingResponse"&gt;
+    &lt;/wsdl:part&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:message name="DeployerPlugin2_PingRequest"&gt;
+    &lt;wsdl:part name="parameters" element="tns:PingRequest"&gt;
+    &lt;/wsdl:part&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:message name="DeployerPlugin2_GetDependenciesRequest"&gt;
+    &lt;wsdl:part name="parameters" element="tns:GetDependenciesRequest"&gt;
+    &lt;/wsdl:part&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:message name="DeployerPlugin2_GetObjectVarSubResponse"&gt;
+    &lt;wsdl:part name="parameters" element="tns:GetObjectVarSubResponse"&gt;
+    &lt;/wsdl:part&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:message name="DeployerPlugin2_ListObjectsRequest"&gt;
+    &lt;wsdl:part name="parameters" element="tns:ListObjectsRequest"&gt;
+    &lt;/wsdl:part&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:message name="DeployerPlugin2_GetConnectionInfoRequest"&gt;
+    &lt;wsdl:part name="parameters" element="tns:GetConnectionInfoRequest"&gt;
+    &lt;/wsdl:part&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:message name="DeployerPlugin2_DeployObjectsWithVarsubRequest"&gt;
+    &lt;wsdl:part name="parameters" element="tns:DeployObjectsWithVarsubRequest"&gt;
+    &lt;/wsdl:part&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:message name="DeployerPlugin2_GetObjectVarSubRequest"&gt;
+    &lt;wsdl:part name="parameters" element="tns:GetObjectVarSubRequest"&gt;
+    &lt;/wsdl:part&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:message name="DeployerPlugin2_VerifyObjectResponse"&gt;
+    &lt;wsdl:part name="parameters" element="tns:VerifyObjectResponse"&gt;
+    &lt;/wsdl:part&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:message name="DeployerPlugin2_GetConnectionInfoResponse"&gt;
+    &lt;wsdl:part name="parameters" element="tns:GetConnectionInfoResponse"&gt;
+    &lt;/wsdl:part&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:portType name="DeployerPlugin2"&gt;
+    &lt;wsdl:operation name="DeployObjects"&gt;
+      &lt;wsdl:input message="tns:DeployerPlugin2_DeployObjectsRequest"&gt;
+    &lt;/wsdl:input&gt;
+      &lt;wsdl:output message="tns:DeployerPlugin2_DeployObjectsResponse"&gt;
+    &lt;/wsdl:output&gt;
+    &lt;/wsdl:operation&gt;
+    
+    &lt;wsdl:operation name="DeployObjectsWithVarsub"&gt;
+      &lt;wsdl:input message="tns:DeployerPlugin2_DeployObjectsWithVarsubRequest"&gt;
+    &lt;/wsdl:input&gt;
+      &lt;wsdl:output message="tns:DeployerPlugin2_DeployObjectsResponse"&gt;
+    &lt;/wsdl:output&gt;
+    &lt;/wsdl:operation&gt;
+    &lt;wsdl:operation name="GetConnectionInfo"&gt;
+      &lt;wsdl:input message="tns:DeployerPlugin2_GetConnectionInfoRequest"&gt;
+    &lt;/wsdl:input&gt;
+      &lt;wsdl:output message="tns:DeployerPlugin2_GetConnectionInfoResponse"&gt;
+    &lt;/wsdl:output&gt;
+    &lt;/wsdl:operation&gt;
+    &lt;wsdl:operation name="GetDependencies"&gt;
+      &lt;wsdl:input message="tns:DeployerPlugin2_GetDependenciesRequest"&gt;
+    &lt;/wsdl:input&gt;
+      &lt;wsdl:output message="tns:DeployerPlugin2_GetDependenciesResponse"&gt;
+    &lt;/wsdl:output&gt;
+    &lt;/wsdl:operation&gt;
+    &lt;wsdl:operation name="GetObjects"&gt;
+      &lt;wsdl:input message="tns:DeployerPlugin2_GetObjectsRequest"&gt;
+    &lt;/wsdl:input&gt;
+      &lt;wsdl:output message="tns:DeployerPlugin2_GetObjectsResponse"&gt;
+    &lt;/wsdl:output&gt;
+    &lt;/wsdl:operation&gt;    
+    &lt;wsdl:operation name="GetObjectVarSub"&gt;
+      &lt;wsdl:input message="tns:DeployerPlugin2_GetObjectVarSubRequest"&gt;
+    &lt;/wsdl:input&gt;
+      &lt;wsdl:output message="tns:DeployerPlugin2_GetObjectVarSubResponse"&gt;
+    &lt;/wsdl:output&gt;
+    &lt;/wsdl:operation&gt;
+    &lt;wsdl:operation name="ListObjects"&gt;
+      &lt;wsdl:input message="tns:DeployerPlugin2_ListObjectsRequest"&gt;
+    &lt;/wsdl:input&gt;
+      &lt;wsdl:output message="tns:DeployerPlugin2_ListObjectsResponse"&gt;
+    &lt;/wsdl:output&gt;
+    &lt;/wsdl:operation&gt;
+    &lt;wsdl:operation name="Ping"&gt;
+      &lt;wsdl:input message="tns:DeployerPlugin2_PingRequest"&gt;
+    &lt;/wsdl:input&gt;
+      &lt;wsdl:output message="tns:DeployerPlugin2_PingResponse"&gt;
+    &lt;/wsdl:output&gt;
+    &lt;/wsdl:operation&gt;
+    &lt;wsdl:operation name="VerifyObject"&gt;
+      &lt;wsdl:input message="tns:DeployerPlugin2_VerifyObjectRequest"&gt;
+    &lt;/wsdl:input&gt;
+      &lt;wsdl:output message="tns:DeployerPlugin2_VerifyObjectResponse"&gt;
+    &lt;/wsdl:output&gt;
+    &lt;/wsdl:operation&gt;
+     &lt;wsdl:operation name="DeployObjectsWithACDL"&gt;
+      &lt;wsdl:input message="tns:DeployerPlugin2_DeployObjectsWithACDLRequest"&gt;
+    &lt;/wsdl:input&gt;
+      &lt;wsdl:output message="tns:DeployerPlugin2_DeployObjectsWithACDLResponse"&gt;
+    &lt;/wsdl:output&gt;
+    &lt;/wsdl:operation&gt;
+    &lt;wsdl:operation name="GetObjectsWithACDL"&gt;
+      &lt;wsdl:input message="tns:DeployerPlugin2_GetObjectsWithACDLRequest"&gt;
+    &lt;/wsdl:input&gt;
+      &lt;wsdl:output message="tns:DeployerPlugin2_GetObjectsWithACDLResponse"&gt;
+    &lt;/wsdl:output&gt;
+    &lt;/wsdl:operation&gt;
+  &lt;/wsdl:portType&gt;
+  &lt;wsdl:binding name="provider_DeployerPlugin2_Binder" type="tns:DeployerPlugin2"&gt;
+    &lt;soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/&gt;
+    &lt;wsdl:operation name="DeployObjects"&gt;
+      &lt;soap12:operation soapAction="provider_DeployerPlugin2_Binder_DeployObjects" style="document"/&gt;
+      &lt;wsdl:input&gt;
+        &lt;soap12:body parts="parameters" use="literal"/&gt;
+      &lt;/wsdl:input&gt;
+      &lt;wsdl:output&gt;
+        &lt;soap12:body parts="parameters" use="literal"/&gt;
+      &lt;/wsdl:output&gt;
+    &lt;/wsdl:operation&gt;
+    &lt;wsdl:operation name="DeployObjectsWithVarsub"&gt;
+      &lt;soap12:operation soapAction="provider_DeployerPlugin2_Binder_DeployObjectsWithVarsub" style="document"/&gt;
+      &lt;wsdl:input&gt;
+        &lt;soap12:body parts="parameters" use="literal"/&gt;
+      &lt;/wsdl:input&gt;
+      &lt;wsdl:output&gt;
+        &lt;soap12:body parts="parameters" use="literal"/&gt;
+      &lt;/wsdl:output&gt;
+    &lt;/wsdl:operation&gt;
+    &lt;wsdl:operation name="GetConnectionInfo"&gt;
+      &lt;soap12:operation soapAction="provider_DeployerPlugin2_Binder_GetConnectionInfo" style="document"/&gt;
+      &lt;wsdl:input&gt;
+        &lt;soap12:body parts="parameters" use="literal"/&gt;
+      &lt;/wsdl:input&gt;
+      &lt;wsdl:output&gt;
+        &lt;soap12:body parts="parameters" use="literal"/&gt;
+      &lt;/wsdl:output&gt;
+    &lt;/wsdl:operation&gt;
+    &lt;wsdl:operation name="GetDependencies"&gt;
+      &lt;soap12:operation soapAction="provider_DeployerPlugin2_Binder_GetDependencies" style="document"/&gt;
+      &lt;wsdl:input&gt;
+        &lt;soap12:body parts="parameters" use="literal"/&gt;
+      &lt;/wsdl:input&gt;
+      &lt;wsdl:output&gt;
+        &lt;soap12:body parts="parameters" use="literal"/&gt;
+      &lt;/wsdl:output&gt;
+    &lt;/wsdl:operation&gt;
+    &lt;wsdl:operation name="GetObjects"&gt;
+      &lt;soap12:operation soapAction="provider_DeployerPlugin2_Binder_GetObjects" style="document"/&gt;
+      &lt;wsdl:input&gt;
+        &lt;soap12:body parts="parameters" use="literal"/&gt;
+      &lt;/wsdl:input&gt;
+      &lt;wsdl:output&gt;
+        &lt;soap12:body parts="parameters" use="literal"/&gt;
+      &lt;/wsdl:output&gt;
+    &lt;/wsdl:operation&gt;
+    &lt;wsdl:operation name="GetObjectVarSub"&gt;
+      &lt;soap12:operation soapAction="provider_DeployerPlugin2_Binder_GetObjectVarSub" style="document"/&gt;
+      &lt;wsdl:input&gt;
+        &lt;soap12:body parts="parameters" use="literal"/&gt;
+      &lt;/wsdl:input&gt;
+      &lt;wsdl:output&gt;
+        &lt;soap12:body parts="parameters" use="literal"/&gt;
+      &lt;/wsdl:output&gt;
+    &lt;/wsdl:operation&gt;
+    &lt;wsdl:operation name="ListObjects"&gt;
+      &lt;soap12:operation soapAction="provider_DeployerPlugin2_Binder_ListObjects" style="document"/&gt;
+      &lt;wsdl:input&gt;
+        &lt;soap12:body parts="parameters" use="literal"/&gt;
+      &lt;/wsdl:input&gt;
+      &lt;wsdl:output&gt;
+        &lt;soap12:body parts="parameters" use="literal"/&gt;
+      &lt;/wsdl:output&gt;
+    &lt;/wsdl:operation&gt;
+    &lt;wsdl:operation name="Ping"&gt;
+      &lt;soap12:operation soapAction="provider_DeployerPlugin2_Binder_Ping" style="document"/&gt;
+      &lt;wsdl:input&gt;
+        &lt;soap12:body parts="parameters" use="literal"/&gt;
+      &lt;/wsdl:input&gt;
+      &lt;wsdl:output&gt;
+        &lt;soap12:body parts="parameters" use="literal"/&gt;
+      &lt;/wsdl:output&gt;
+    &lt;/wsdl:operation&gt;
+    &lt;wsdl:operation name="VerifyObject"&gt;
+      &lt;soap12:operation soapAction="provider_DeployerPlugin2_Binder_VerifyObject" style="document"/&gt;
+      &lt;wsdl:input&gt;
+        &lt;soap12:body parts="parameters" use="literal"/&gt;
+      &lt;/wsdl:input&gt;
+      &lt;wsdl:output&gt;
+        &lt;soap12:body parts="parameters" use="literal"/&gt;
+      &lt;/wsdl:output&gt;
+    &lt;/wsdl:operation&gt;
+  	&lt;wsdl:operation name="DeployObjectsWithACDL"&gt;
+      &lt;soap12:operation soapAction="provider_DeployerPlugin2_Binder_DeployObjectsWithACDL" style="document"/&gt;
+      &lt;wsdl:input&gt;
+        &lt;soap12:body parts="parameters" use="literal"/&gt;
+      &lt;/wsdl:input&gt;
+      &lt;wsdl:output&gt;
+        &lt;soap12:body parts="parameters" use="literal"/&gt;
+      &lt;/wsdl:output&gt;
+  	&lt;/wsdl:operation&gt;
+  	&lt;wsdl:operation name="GetObjectsWithACDL"&gt;
+      &lt;soap12:operation soapAction="provider_DeployerPlugin2_Binder_GetObjectsWithACDL" style="document"/&gt;
+      &lt;wsdl:input&gt;
+        &lt;soap12:body parts="parameters" use="literal"/&gt;
+      &lt;/wsdl:input&gt;
+      &lt;wsdl:output&gt;
+        &lt;soap12:body parts="parameters" use="literal"/&gt;
+      &lt;/wsdl:output&gt;
+  	&lt;/wsdl:operation&gt;
+  &lt;/wsdl:binding&gt;
+  &lt;wsdl:service name="wsProvider"&gt;
+    &lt;wsdl:port name="provider_DeployerPlugin2_Port" binding="tns:provider_DeployerPlugin2_Binder"&gt;
+      &lt;soap12:address location="http://MCKYANG.AME.ad.sag:6666/ws/wm.server.deployer.spi:wsProvider/provider_DeployerPlugin2_Port"/&gt;
+    &lt;/wsdl:port&gt;
+  &lt;/wsdl:service&gt;
+&lt;/wsdl:definitions&gt;
+</value>
+  <value name="externalWSDLURL">file:/C:/Documents and Settings/kyang/Desktop/wm821/DeployerPlugin2.wsdl</value>
+  <value name="WSDLURL">http://MCKYANG.AME.ad.sag:6666/ws/wm.designer.deployer:spiWS?WSDL</value>
+  <value name="definitionName">DeployerPlugin2</value>
+  <value name="version">_8_2</value>
+  <value name="schemaDomain">e47f219fbd7e84bf12d7601f3f8</value>
+  <Boolean name="rawArray">true</Boolean>
+  <array name="handlerList" type="record" depth="1">
+  </array>
+  <array name="binderList" type="record" depth="1">
+    <record javaclass="com.wm.util.Values">
+      <value name="binderName">provider_DeployerPlugin2_Binder</value>
+      <value name="bindingName">provider_DeployerPlugin2_Binder</value>
+      <value name="bindingStyle">document</value>
+      <value name="bindingUse">literal</value>
+      <value name="bindingType">SOAP</value>
+      <value name="portName">provider_DeployerPlugin2_Port</value>
+      <value name="portTypeName">DeployerPlugin2</value>
+      <value name="bindingTransport">http://schemas.xmlsoap.org/soap/http</value>
+      <value name="transportType">http</value>
+      <record name="operationMap" javaclass="com.wm.util.Values">
+        <value name="provider_DeployerPlugin2_Binder_DeployObjects">DeployObjects</value>
+        <value name="provider_DeployerPlugin2_Binder_GetConnectionInfo">GetConnectionInfo</value>
+        <value name="provider_DeployerPlugin2_Binder_Ping">Ping</value>
+        <value name="provider_DeployerPlugin2_Binder_ListObjects">ListObjects</value>
+        <value name="provider_DeployerPlugin2_Binder_GetObjectVarSub">GetObjectVarSub</value>
+        <value name="provider_DeployerPlugin2_Binder_GetObjects">GetObjects</value>
+        <value name="provider_DeployerPlugin2_Binder_DeployObjectsWithACDL">DeployObjectsWithACDL</value>
+        <value name="provider_DeployerPlugin2_Binder_DeployObjectsWithVarsub">DeployObjectsWithVarsub</value>
+        <value name="provider_DeployerPlugin2_Binder_VerifyObject">VerifyObject</value>
+        <value name="provider_DeployerPlugin2_Binder_GetDependencies">GetDependencies</value>
+        <value name="provider_DeployerPlugin2_Binder_GetObjectsWithACDL">GetObjectsWithACDL</value>
+      </record>
+      <value name="SOAPProtocol">SOAP 1.2 Protocol</value>
+      <value name="SOAPDirective">ws</value>
+      <Boolean name="useCSQ">false</Boolean>
+    </record>
+  </array>
+  <array name="operationList" type="record" depth="1">
+    <record javaclass="com.wm.util.Values">
+      <value name="operationName">DeployObjects</value>
+      <value name="serviceName">wm.designer.deployer.spiWS_.services:DeployObjects</value>
+      <value name="originalMEPType">MEP_URI_IN_OUT</value>
+      <record name="requestElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.webmethods.com/provider/DeployerPlugin2/:DeployerPlugin2_DeployObjects_Input</value>
+          <value name="docType">wm.designer.deployer.spiWS_.docTypes:DeployerPlugin2_DeployObjects_Input</value>
+          <value name="nsOwner">wm.designer.deployer.spiWS_.docTypes:DeployerPlugin2_DeployObjects_Input</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+      <record name="responseElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.webmethods.com/provider/DeployerPlugin2/:DeployerPlugin2_DeployObjects_Output</value>
+          <value name="docType">wm.designer.deployer.spiWS_.docTypes:DeployerPlugin2_DeployObjects_Output</value>
+          <value name="nsOwner">wm.designer.deployer.spiWS_.docTypes:DeployerPlugin2_DeployObjects_Output</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="operationName">DeployObjectsWithVarsub</value>
+      <value name="serviceName">wm.designer.deployer.spiWS_.services:DeployObjectsWithVarsub</value>
+      <value name="originalMEPType">MEP_URI_IN_OUT</value>
+      <record name="requestElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.webmethods.com/provider/DeployerPlugin2/:DeployerPlugin2_DeployObjectsWithVarsub_Input</value>
+          <value name="docType">wm.designer.deployer.spiWS_.docTypes:DeployerPlugin2_DeployObjectsWithVarsub_Input</value>
+          <value name="nsOwner">wm.designer.deployer.spiWS_.docTypes:DeployerPlugin2_DeployObjectsWithVarsub_Input</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+      <record name="responseElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.webmethods.com/provider/DeployerPlugin2/:DeployerPlugin2_DeployObjectsWithVarsub_Output</value>
+          <value name="docType">wm.designer.deployer.spiWS_.docTypes:DeployerPlugin2_DeployObjectsWithVarsub_Output</value>
+          <value name="nsOwner">wm.designer.deployer.spiWS_.docTypes:DeployerPlugin2_DeployObjectsWithVarsub_Output</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="operationName">GetConnectionInfo</value>
+      <value name="serviceName">wm.designer.deployer.spiWS_.services:GetConnectionInfo</value>
+      <value name="originalMEPType">MEP_URI_IN_OUT</value>
+      <record name="requestElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.webmethods.com/provider/DeployerPlugin2/:DeployerPlugin2_GetConnectionInfo_Input</value>
+          <value name="docType">wm.designer.deployer.spiWS_.docTypes:DeployerPlugin2_GetConnectionInfo_Input</value>
+          <value name="nsOwner">wm.designer.deployer.spiWS_.docTypes:DeployerPlugin2_GetConnectionInfo_Input</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+      <record name="responseElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.webmethods.com/provider/DeployerPlugin2/:DeployerPlugin2_GetConnectionInfo_Output</value>
+          <value name="docType">wm.designer.deployer.spiWS_.docTypes:DeployerPlugin2_GetConnectionInfo_Output</value>
+          <value name="nsOwner">wm.designer.deployer.spiWS_.docTypes:DeployerPlugin2_GetConnectionInfo_Output</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="operationName">GetDependencies</value>
+      <value name="serviceName">wm.designer.deployer.spiWS_.services:GetDependencies</value>
+      <value name="originalMEPType">MEP_URI_IN_OUT</value>
+      <record name="requestElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.webmethods.com/provider/DeployerPlugin2/:DeployerPlugin2_GetDependencies_Input</value>
+          <value name="docType">wm.designer.deployer.spiWS_.docTypes:DeployerPlugin2_GetDependencies_Input</value>
+          <value name="nsOwner">wm.designer.deployer.spiWS_.docTypes:DeployerPlugin2_GetDependencies_Input</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+      <record name="responseElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.webmethods.com/provider/DeployerPlugin2/:DeployerPlugin2_GetDependencies_Output</value>
+          <value name="docType">wm.designer.deployer.spiWS_.docTypes:DeployerPlugin2_GetDependencies_Output</value>
+          <value name="nsOwner">wm.designer.deployer.spiWS_.docTypes:DeployerPlugin2_GetDependencies_Output</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="operationName">GetObjects</value>
+      <value name="serviceName">wm.designer.deployer.spiWS_.services:GetObjects</value>
+      <value name="originalMEPType">MEP_URI_IN_OUT</value>
+      <record name="requestElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.webmethods.com/provider/DeployerPlugin2/:DeployerPlugin2_GetObjects_Input</value>
+          <value name="docType">wm.designer.deployer.spiWS_.docTypes:DeployerPlugin2_GetObjects_Input</value>
+          <value name="nsOwner">wm.designer.deployer.spiWS_.docTypes:DeployerPlugin2_GetObjects_Input</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+      <record name="responseElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.webmethods.com/provider/DeployerPlugin2/:DeployerPlugin2_GetObjects_Output</value>
+          <value name="docType">wm.designer.deployer.spiWS_.docTypes:DeployerPlugin2_GetObjects_Output</value>
+          <value name="nsOwner">wm.designer.deployer.spiWS_.docTypes:DeployerPlugin2_GetObjects_Output</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="operationName">GetObjectVarSub</value>
+      <value name="serviceName">wm.designer.deployer.spiWS_.services:GetObjectVarSub</value>
+      <value name="originalMEPType">MEP_URI_IN_OUT</value>
+      <record name="requestElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.webmethods.com/provider/DeployerPlugin2/:DeployerPlugin2_GetObjectVarSub_Input</value>
+          <value name="docType">wm.designer.deployer.spiWS_.docTypes:DeployerPlugin2_GetObjectVarSub_Input</value>
+          <value name="nsOwner">wm.designer.deployer.spiWS_.docTypes:DeployerPlugin2_GetObjectVarSub_Input</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+      <record name="responseElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.webmethods.com/provider/DeployerPlugin2/:DeployerPlugin2_GetObjectVarSub_Output</value>
+          <value name="docType">wm.designer.deployer.spiWS_.docTypes:DeployerPlugin2_GetObjectVarSub_Output</value>
+          <value name="nsOwner">wm.designer.deployer.spiWS_.docTypes:DeployerPlugin2_GetObjectVarSub_Output</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="operationName">ListObjects</value>
+      <value name="serviceName">wm.designer.deployer.spiWS_.services:ListObjects</value>
+      <value name="originalMEPType">MEP_URI_IN_OUT</value>
+      <record name="requestElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.webmethods.com/provider/DeployerPlugin2/:DeployerPlugin2_ListObjects_Input</value>
+          <value name="docType">wm.designer.deployer.spiWS_.docTypes:DeployerPlugin2_ListObjects_Input</value>
+          <value name="nsOwner">wm.designer.deployer.spiWS_.docTypes:DeployerPlugin2_ListObjects_Input</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+      <record name="responseElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.webmethods.com/provider/DeployerPlugin2/:DeployerPlugin2_ListObjects_Output</value>
+          <value name="docType">wm.designer.deployer.spiWS_.docTypes:DeployerPlugin2_ListObjects_Output</value>
+          <value name="nsOwner">wm.designer.deployer.spiWS_.docTypes:DeployerPlugin2_ListObjects_Output</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="operationName">Ping</value>
+      <value name="serviceName">wm.designer.deployer.spiWS_.services:Ping</value>
+      <value name="originalMEPType">MEP_URI_IN_OUT</value>
+      <record name="requestElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.webmethods.com/provider/DeployerPlugin2/:DeployerPlugin2_Ping_Input</value>
+          <value name="docType">wm.designer.deployer.spiWS_.docTypes:DeployerPlugin2_Ping_Input</value>
+          <value name="nsOwner">wm.designer.deployer.spiWS_.docTypes:DeployerPlugin2_Ping_Input</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+      <record name="responseElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.webmethods.com/provider/DeployerPlugin2/:DeployerPlugin2_Ping_Output</value>
+          <value name="docType">wm.designer.deployer.spiWS_.docTypes:DeployerPlugin2_Ping_Output</value>
+          <value name="nsOwner">wm.designer.deployer.spiWS_.docTypes:DeployerPlugin2_Ping_Output</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="operationName">VerifyObject</value>
+      <value name="serviceName">wm.designer.deployer.spiWS_.services:VerifyObject</value>
+      <value name="originalMEPType">MEP_URI_IN_OUT</value>
+      <record name="requestElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.webmethods.com/provider/DeployerPlugin2/:DeployerPlugin2_VerifyObject_Input</value>
+          <value name="docType">wm.designer.deployer.spiWS_.docTypes:DeployerPlugin2_VerifyObject_Input</value>
+          <value name="nsOwner">wm.designer.deployer.spiWS_.docTypes:DeployerPlugin2_VerifyObject_Input</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+      <record name="responseElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.webmethods.com/provider/DeployerPlugin2/:DeployerPlugin2_VerifyObject_Output</value>
+          <value name="docType">wm.designer.deployer.spiWS_.docTypes:DeployerPlugin2_VerifyObject_Output</value>
+          <value name="nsOwner">wm.designer.deployer.spiWS_.docTypes:DeployerPlugin2_VerifyObject_Output</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="operationName">DeployObjectsWithACDL</value>
+      <value name="serviceName">wm.designer.deployer.spiWS_.services:DeployObjectsWithACDL</value>
+      <value name="originalMEPType">MEP_URI_IN_OUT</value>
+      <record name="requestElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.webmethods.com/provider/DeployerPlugin2/:DeployerPlugin2_DeployObjectsWithACDL_Input</value>
+          <value name="docType">wm.designer.deployer.spiWS_.docTypes:DeployerPlugin2_DeployObjectsWithACDL_Input</value>
+          <value name="nsOwner">wm.designer.deployer.spiWS_.docTypes:DeployerPlugin2_DeployObjectsWithACDL_Input</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+      <record name="responseElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.webmethods.com/provider/DeployerPlugin2/:DeployerPlugin2_DeployObjectsWithACDL_Output</value>
+          <value name="docType">wm.designer.deployer.spiWS_.docTypes:DeployerPlugin2_DeployObjectsWithACDL_Output</value>
+          <value name="nsOwner">wm.designer.deployer.spiWS_.docTypes:DeployerPlugin2_DeployObjectsWithACDL_Output</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="operationName">GetObjectsWithACDL</value>
+      <value name="serviceName">wm.designer.deployer.spiWS_.services:GetObjectsWithACDL</value>
+      <value name="originalMEPType">MEP_URI_IN_OUT</value>
+      <record name="requestElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.webmethods.com/provider/DeployerPlugin2/:DeployerPlugin2_GetObjectsWithACDL_Input</value>
+          <value name="docType">wm.designer.deployer.spiWS_.docTypes:DeployerPlugin2_GetObjectsWithACDL_Input</value>
+          <value name="nsOwner">wm.designer.deployer.spiWS_.docTypes:DeployerPlugin2_GetObjectsWithACDL_Input</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+      <record name="responseElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.webmethods.com/provider/DeployerPlugin2/:DeployerPlugin2_GetObjectsWithACDL_Output</value>
+          <value name="docType">wm.designer.deployer.spiWS_.docTypes:DeployerPlugin2_GetObjectsWithACDL_Output</value>
+          <value name="nsOwner">wm.designer.deployer.spiWS_.docTypes:DeployerPlugin2_GetObjectsWithACDL_Output</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+    </record>
+  </array>
+  <record name="namespaces" javaclass="com.wm.util.Values">
+    <value name="soapenc">http://schemas.xmlsoap.org/soap/encoding/</value>
+    <value name="wsdl">http://schemas.xmlsoap.org/wsdl/</value>
+    <value name="soapjms">http://www.w3.org/2008/07/soap/bindings/JMS/</value>
+    <value name="http">http://schemas.xmlsoap.org/wsdl/http/</value>
+    <value name="tns">http://www.webmethods.com/provider/DeployerPlugin2/</value>
+    <value name="xsd">http://www.w3.org/2001/XMLSchema</value>
+    <value name="HDR1">http://www.webmethods.com/DeployerPlugin2/</value>
+    <value name="soap">http://schemas.xmlsoap.org/wsdl/soap/</value>
+    <value name="mime">http://schemas.xmlsoap.org/wsdl/mime/</value>
+    <value name="soap12">http://schemas.xmlsoap.org/wsdl/soap12/</value>
+  </record>
+  <Boolean name="HeadersInPipelineEnabled">false</Boolean>
+  <Boolean name="validateSOAPResponse">true</Boolean>
+  <Boolean name="enableCompatibility">false</Boolean>
+  <Boolean name="registerDoctypes">false</Boolean>
+  <Boolean name="allTypes">false</Boolean>
+  <Boolean name="generateXOPObjectForBase64Binary">false</Boolean>
+  <null name="originURI"/>
+  <value name="modifiable">true</value>
+</Values>

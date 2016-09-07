@@ -1,0 +1,20 @@
+.List_1 > span.WebWorks_Number
+{
+  text-indent: -18pt;
+}
+
+.List_1 > span.WebWorks_Number > *
+{
+  text-indent: 0;
+}
+
+.ChapterTOC_1 > span.WebWorks_Number
+{
+  text-indent: -18pt;
+}
+
+.ChapterTOC_1 > span.WebWorks_Number > *
+{
+  text-indent: 0;
+}
+

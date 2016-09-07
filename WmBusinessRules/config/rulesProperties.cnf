@@ -1,0 +1,10 @@
+#
+# webMethods Business Rules configuration file
+# 
+
+#
+# Rules project directory path. Must be an absolute path. If none is specified then a projects folder will be created
+# in the package. 
+#
+rulesdir=
+

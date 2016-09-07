@@ -1,0 +1,17 @@
+# webMethods, Inc. Version Control Integration Feature
+# This is an example configuration file for ClearCase.
+
+# A configuration file named "clearcase.cnf" must be present in the 
+# \config directory of the WmClearCase package.
+
+# For more information, see the webMethods Version Control System
+# Integration Developer's Guide.
+
+# ClearCase View-Working directory mapping client 
+
+watt.vcs.cc.view.rootdirectory=
+watt.vcs.cc.workingdirectory=
+watt.vcs.cc.checkoutmode=
+watt.vcs.cc.branch=
+
+

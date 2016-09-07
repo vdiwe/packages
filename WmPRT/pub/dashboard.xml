@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="dashboardxsl.xml"?>
+<dashBoard>
+    <extendedSettings>
+        <Setting RECOMMENDATIONS="NONE">
+            <Name>watt.server.auditGuaranteed</Name>
+            <Value>false</Value>
+        </Setting>
+        <Setting RECOMMENDATIONS="NONE">
+            <Name>watt.server.auditStore</Name>
+            <Value>database</Value>
+        </Setting>
+        <Setting RECOMMENDATIONS="NONE">
+            <Name>watt.server.auditThreshold</Name>
+            <Value>200</Value>
+        </Setting>
+        <Setting RECOMMENDATIONS="NONE">
+            <Name>watt.server.auditSync</Name>
+            <Value>false</Value>
+        </Setting>
+        <Setting RECOMMENDATIONS="NONE">
+            <Name>watt.server.auditMaxFetchSize</Name>
+            <Value>100</Value>
+        </Setting>
+        <Setting RECOMMENDATIONS="NONE">
+            <Name>watt.server.auditMaxPool</Name>
+            <Value>10</Value>
+        </Setting>
+        <Setting RECOMMENDATIONS="NONE">
+            <Name>watt.server.auditMinPool</Name>
+            <Value>1</Value>
+        </Setting>
+        <Setting RECOMMENDATIONS="NONE">
+            <Name>watt.server.auditRetryCount</Name>
+            <Value>3</Value>
+        </Setting>
+    </extendedSettings>
+    <prtHome>
+        <Setting RECOMMENDATIONS="NONE">
+            <Name>Database Operation Retry Limit</Name>
+            <Value>1000</Value>
+        </Setting>
+        <Setting RECOMMENDATIONS="NONE">
+            <Name>Database Operation Retry Interval (sec)</Name>
+            <Value>5</Value>
+        </Setting>
+        <Setting RECOMMENDATIONS="NONE">
+            <Name>Database Cleanup Interval (sec)</Name>
+            <Value>600</Value>
+        </Setting>
+        <Setting RECOMMENDATIONS="NONE">
+            <Name>Join Queue Lock Expiration (sec)</Name>
+            <Value>10</Value>
+        </Setting>
+        <Setting RECOMMENDATIONS="NONE">
+            <Name>Process Lock Expiration (sec)</Name>
+            <Value>10</Value>
+        </Setting>
+        <Setting RECOMMENDATIONS="NONE">
+            <Name>Step Lock Expiration (sec)</Name>
+            <Value>10</Value>
+        </Setting>
+        <Setting RECOMMENDATIONS="NONE">
+            <Name>Duplicate Event Detection</Name>
+            <Value>true</Value>
+        </Setting>
+        <Setting RECOMMENDATIONS="NONE">
+            <Name>Optimize Referenced Process Execution</Name>
+            <Value>true</Value>
+        </Setting>
+    </prtHome>
+    <jdbcConnections>
+        <jdbcConnection RECOMMENDATIONS="NONE">
+            <FunctionName>ISCoreAudit</FunctionName>
+            <AliasName>TN DB Pool</AliasName>
+            <MinimumConnections>0</MinimumConnections>
+            <MaximumConnections>10</MaximumConnections>
+            <IdleTimeout>60000</IdleTimeout>
+        </jdbcConnection>
+        <jdbcConnection RECOMMENDATIONS="NONE">
+            <FunctionName>ProcessAudit</FunctionName>
+            <AliasName>TN DB Pool</AliasName>
+            <MinimumConnections>0</MinimumConnections>
+            <MaximumConnections>10</MaximumConnections>
+            <IdleTimeout>60000</IdleTimeout>
+        </jdbcConnection>
+        <jdbcConnection RECOMMENDATIONS="NONE">
+            <FunctionName>ProcessEngine</FunctionName>
+            <AliasName>TN DB Pool</AliasName>
+            <MinimumConnections>0</MinimumConnections>
+            <MaximumConnections>10</MaximumConnections>
+            <IdleTimeout>60000</IdleTimeout>
+        </jdbcConnection>
+    </jdbcConnections>
+    <qosSettings>
+        <qosSetting RECOMMENDATIONS="NONE">
+            <ModelID>PRT/Correlation</ModelID>
+            <ModelVersion>1</ModelVersion>
+            <LoggingLevel>5</LoggingLevel>
+            <LogTransitions>false</LogTransitions>
+            <VolatileTracking>false</VolatileTracking>
+            <VolatileTransitions>true</VolatileTransitions>
+            <OptimizeLocally>true</OptimizeLocally>
+            <StepIDs>none</StepIDs>
+        </qosSetting>
+        <qosSetting RECOMMENDATIONS="NONE">
+            <ModelID>pq__PRT/ClassicSplitJoin_staf</ModelID>
+            <ModelVersion>1</ModelVersion>
+            <LoggingLevel>5</LoggingLevel>
+            <LogTransitions>false</LogTransitions>
+            <VolatileTracking>false</VolatileTracking>
+            <VolatileTransitions>true</VolatileTransitions>
+            <OptimizeLocally>true</OptimizeLocally>
+            <StepIDs>none</StepIDs>
+        </qosSetting>
+        <qosSetting RECOMMENDATIONS="NONE">
+            <ModelID>pq__PRT/BasicModel_8fb</ModelID>
+            <ModelVersion>1</ModelVersion>
+            <LoggingLevel>5</LoggingLevel>
+            <LogTransitions>false</LogTransitions>
+            <VolatileTracking>false</VolatileTracking>
+            <VolatileTransitions>true</VolatileTransitions>
+            <OptimizeLocally>true</OptimizeLocally>
+            <StepIDs>none</StepIDs>
+        </qosSetting>
+        <qosSetting RECOMMENDATIONS="NONE">
+            <ModelID>PRT/complexJoinAnd2And</ModelID>
+            <ModelVersion>1</ModelVersion>
+            <LoggingLevel>2</LoggingLevel>
+            <LogTransitions>false</LogTransitions>
+            <VolatileTracking>false</VolatileTracking>
+            <VolatileTransitions>true</VolatileTransitions>
+            <OptimizeLocally>true</OptimizeLocally>
+            <StepIDs>none</StepIDs>
+        </qosSetting>
+        <qosSetting RECOMMENDATIONS="NONE">
+            <ModelID>pq__PRT/processmodel_4pa</ModelID>
+            <ModelVersion>1</ModelVersion>
+            <LoggingLevel>5</LoggingLevel>
+            <LogTransitions>false</LogTransitions>
+            <VolatileTracking>false</VolatileTracking>
+            <VolatileTransitions>true</VolatileTransitions>
+            <OptimizeLocally>true</OptimizeLocally>
+            <StepIDs>none</StepIDs>
+        </qosSetting>
+        <qosSetting RECOMMENDATIONS="NONE">
+            <ModelID>PFK1VAZKX</ModelID>
+            <ModelVersion>1</ModelVersion>
+            <LoggingLevel>5</LoggingLevel>
+            <LogTransitions>true</LogTransitions>
+            <VolatileTracking>true</VolatileTracking>
+            <VolatileTransitions>true</VolatileTransitions>
+            <OptimizeLocally>true</OptimizeLocally>
+            <StepIDs>none</StepIDs>
+        </qosSetting>
+    </qosSettings>
+    <triggers>
+        <currentRetThreads>N/A</currentRetThreads>
+        <currentExecThreads>0</currentExecThreads>
+        <maxRetThreads>(Broker Not Configured)</maxRetThreads>
+        <maxExecThreads>1500 (100% of Server Thread Pool)</maxExecThreads>
+        <queueCapacityThrottle>100%</queueCapacityThrottle>
+        <execThreadsThrottle>100%</execThreadsThrottle>
+        <triggerSetting RECOMMENDATIONS="NONE">
+            <triggerName>New_Process.Design_Server:trigger</triggerName>
+            <RetrievalStatus>Yes</RetrievalStatus>
+            <QueueCapacity>10</QueueCapacity>
+            <QueueRefillLevel>4</QueueRefillLevel>
+            <ProcessingStatus>Yes </ProcessingStatus>
+            <ProcessingMode>Concurrent</ProcessingMode>
+            <MaximumThreads>10</MaximumThreads>
+            <triggerCurrentThreads>0</triggerCurrentThreads>
+            <VolatileQueue>0</VolatileQueue>
+            <PersistedQueue>0</PersistedQueue>
+        </triggerSetting>
+        <triggerSetting RECOMMENDATIONS="NONE">
+            <triggerName>PRT.Basic_Model.Basic_Model_1.webMethods7:transitionTrigger</triggerName>
+            <RetrievalStatus>Yes</RetrievalStatus>
+            <QueueCapacity>10</QueueCapacity>
+            <QueueRefillLevel>4</QueueRefillLevel>
+            <ProcessingStatus>Yes </ProcessingStatus>
+            <ProcessingMode>Concurrent</ProcessingMode>
+            <MaximumThreads>10</MaximumThreads>
+            <triggerCurrentThreads>0</triggerCurrentThreads>
+            <VolatileQueue>0</VolatileQueue>
+            <PersistedQueue>0</PersistedQueue>
+        </triggerSetting>
+        <triggerSetting RECOMMENDATIONS="NONE">
+            <triggerName>PRT.Basic_Model.webMethods7:subscriptionTrigger</triggerName>
+            <RetrievalStatus>Yes</RetrievalStatus>
+            <QueueCapacity>10</QueueCapacity>
+            <QueueRefillLevel>4</QueueRefillLevel>
+            <ProcessingStatus>Yes </ProcessingStatus>
+            <ProcessingMode>Concurrent</ProcessingMode>
+            <MaximumThreads>10</MaximumThreads>
+            <triggerCurrentThreads>0</triggerCurrentThreads>
+            <VolatileQueue>0</VolatileQueue>
+            <PersistedQueue>0</PersistedQueue>
+        </triggerSetting>
+        <triggerSetting RECOMMENDATIONS="NONE">
+            <triggerName>PRT.Classic_Split_Join.Classic_Split_Join_1.webMethods7:transitionTrigger</triggerName>
+            <RetrievalStatus>Yes</RetrievalStatus>
+            <QueueCapacity>10</QueueCapacity>
+            <QueueRefillLevel>4</QueueRefillLevel>
+            <ProcessingStatus>Yes </ProcessingStatus>
+            <ProcessingMode>Concurrent</ProcessingMode>
+            <MaximumThreads>10</MaximumThreads>
+            <triggerCurrentThreads>0</triggerCurrentThreads>
+            <VolatileQueue>0</VolatileQueue>
+            <PersistedQueue>0</PersistedQueue>
+        </triggerSetting>
+        <triggerSetting RECOMMENDATIONS="NONE">
+            <triggerName>PRT.Classic_Split_Join.webMethods7:subscriptionTrigger</triggerName>
+            <RetrievalStatus>Yes</RetrievalStatus>
+            <QueueCapacity>10</QueueCapacity>
+            <QueueRefillLevel>4</QueueRefillLevel>
+            <ProcessingStatus>Yes </ProcessingStatus>
+            <ProcessingMode>Concurrent</ProcessingMode>
+            <MaximumThreads>10</MaximumThreads>
+            <triggerCurrentThreads>0</triggerCurrentThreads>
+            <VolatileQueue>0</VolatileQueue>
+            <PersistedQueue>0</PersistedQueue>
+        </triggerSetting>
+        <triggerSetting RECOMMENDATIONS="NONE">
+            <triggerName>PRT.Correlation.Correlation_1.Default:transitionTrigger</triggerName>
+            <RetrievalStatus>Yes</RetrievalStatus>
+            <QueueCapacity>10</QueueCapacity>
+            <QueueRefillLevel>4</QueueRefillLevel>
+            <ProcessingStatus>Yes </ProcessingStatus>
+            <ProcessingMode>Concurrent</ProcessingMode>
+            <MaximumThreads>10</MaximumThreads>
+            <triggerCurrentThreads>0</triggerCurrentThreads>
+            <VolatileQueue>0</VolatileQueue>
+            <PersistedQueue>0</PersistedQueue>
+        </triggerSetting>
+        <triggerSetting RECOMMENDATIONS="NONE">
+            <triggerName>PRT.Correlation.Default:subscriptionTrigger</triggerName>
+            <RetrievalStatus>Yes</RetrievalStatus>
+            <QueueCapacity>10</QueueCapacity>
+            <QueueRefillLevel>4</QueueRefillLevel>
+            <ProcessingStatus>Yes </ProcessingStatus>
+            <ProcessingMode>Concurrent</ProcessingMode>
+            <MaximumThreads>10</MaximumThreads>
+            <triggerCurrentThreads>0</triggerCurrentThreads>
+            <VolatileQueue>0</VolatileQueue>
+            <PersistedQueue>0</PersistedQueue>
+        </triggerSetting>
+        <triggerSetting RECOMMENDATIONS="NONE">
+            <triggerName>joins.complexJoinAnd2And.Default:subscriptionTrigger</triggerName>
+            <RetrievalStatus>Yes</RetrievalStatus>
+            <QueueCapacity>10</QueueCapacity>
+            <QueueRefillLevel>4</QueueRefillLevel>
+            <ProcessingStatus>Yes </ProcessingStatus>
+            <ProcessingMode>Concurrent</ProcessingMode>
+            <MaximumThreads>10</MaximumThreads>
+            <triggerCurrentThreads>0</triggerCurrentThreads>
+            <VolatileQueue>0</VolatileQueue>
+            <PersistedQueue>0</PersistedQueue>
+        </triggerSetting>
+        <triggerSetting RECOMMENDATIONS="NONE">
+            <triggerName>joins.complexJoinAnd2And.complexJoinAnd2And_1.Default:transitionTrigger</triggerName>
+            <RetrievalStatus>Yes</RetrievalStatus>
+            <QueueCapacity>10</QueueCapacity>
+            <QueueRefillLevel>4</QueueRefillLevel>
+            <ProcessingStatus>Yes </ProcessingStatus>
+            <ProcessingMode>Concurrent</ProcessingMode>
+            <MaximumThreads>10</MaximumThreads>
+            <triggerCurrentThreads>0</triggerCurrentThreads>
+            <VolatileQueue>0</VolatileQueue>
+            <PersistedQueue>0</PersistedQueue>
+        </triggerSetting>
+        <triggerSetting RECOMMENDATIONS="NONE">
+            <triggerName>joins.process_model.Default:subscriptionTrigger</triggerName>
+            <RetrievalStatus>Yes</RetrievalStatus>
+            <QueueCapacity>10</QueueCapacity>
+            <QueueRefillLevel>4</QueueRefillLevel>
+            <ProcessingStatus>Yes </ProcessingStatus>
+            <ProcessingMode>Concurrent</ProcessingMode>
+            <MaximumThreads>10</MaximumThreads>
+            <triggerCurrentThreads>0</triggerCurrentThreads>
+            <VolatileQueue>0</VolatileQueue>
+            <PersistedQueue>0</PersistedQueue>
+        </triggerSetting>
+        <triggerSetting RECOMMENDATIONS="NONE">
+            <triggerName>joins.process_model.process_model_1.Default:transitionTrigger</triggerName>
+            <RetrievalStatus>Yes</RetrievalStatus>
+            <QueueCapacity>10</QueueCapacity>
+            <QueueRefillLevel>4</QueueRefillLevel>
+            <ProcessingStatus>Yes </ProcessingStatus>
+            <ProcessingMode>Concurrent</ProcessingMode>
+            <MaximumThreads>10</MaximumThreads>
+            <triggerCurrentThreads>0</triggerCurrentThreads>
+            <VolatileQueue>0</VolatileQueue>
+            <PersistedQueue>0</PersistedQueue>
+        </triggerSetting>
+        <triggerSetting RECOMMENDATIONS="NONE">
+            <triggerName>wm.monitor.pmControl:EnableResponseTrigger</triggerName>
+            <RetrievalStatus>Yes</RetrievalStatus>
+            <QueueCapacity>10</QueueCapacity>
+            <QueueRefillLevel>4</QueueRefillLevel>
+            <ProcessingStatus>Yes </ProcessingStatus>
+            <ProcessingMode>Serial</ProcessingMode>
+            <MaximumThreads>1</MaximumThreads>
+            <triggerCurrentThreads>0</triggerCurrentThreads>
+            <VolatileQueue>0</VolatileQueue>
+            <PersistedQueue>0</PersistedQueue>
+        </triggerSetting>
+        <triggerSetting RECOMMENDATIONS="NONE">
+            <triggerName>wm.prt.status:controlTrigger</triggerName>
+            <RetrievalStatus>Yes</RetrievalStatus>
+            <QueueCapacity>10</QueueCapacity>
+            <QueueRefillLevel>4</QueueRefillLevel>
+            <ProcessingStatus>Yes </ProcessingStatus>
+            <ProcessingMode>Concurrent</ProcessingMode>
+            <MaximumThreads>10</MaximumThreads>
+            <triggerCurrentThreads>0</triggerCurrentThreads>
+            <VolatileQueue>0</VolatileQueue>
+            <PersistedQueue>0</PersistedQueue>
+        </triggerSetting>
+        <triggerSetting RECOMMENDATIONS="NONE">
+            <triggerName>wm.prt.status:trigger</triggerName>
+            <RetrievalStatus>Yes</RetrievalStatus>
+            <QueueCapacity>10</QueueCapacity>
+            <QueueRefillLevel>4</QueueRefillLevel>
+            <ProcessingStatus>Yes </ProcessingStatus>
+            <ProcessingMode>Serial</ProcessingMode>
+            <MaximumThreads>1</MaximumThreads>
+            <triggerCurrentThreads>0</triggerCurrentThreads>
+            <VolatileQueue>0</VolatileQueue>
+            <PersistedQueue>0</PersistedQueue>
+        </triggerSetting>
+        <triggerSetting RECOMMENDATIONS="NONE">
+            <triggerName>ws.monitor.process.model:refreshModelTrigger</triggerName>
+            <RetrievalStatus>Yes</RetrievalStatus>
+            <QueueCapacity>10</QueueCapacity>
+            <QueueRefillLevel>4</QueueRefillLevel>
+            <ProcessingStatus>Yes </ProcessingStatus>
+            <ProcessingMode>Serial</ProcessingMode>
+            <MaximumThreads>1</MaximumThreads>
+            <triggerCurrentThreads>0</triggerCurrentThreads>
+            <VolatileQueue>0</VolatileQueue>
+            <PersistedQueue>0</PersistedQueue>
+        </triggerSetting>
+    </triggers>
+</dashBoard>

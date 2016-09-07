@@ -1,0 +1,61 @@
+<!-- BEGIN B2B STYLE -->
+
+<meta http-equiv="pragma" content="no-cache">
+
+<STYLE TYPE="text/css">
+
+P, TH, TD, FONT {
+    font-family: helvetica;
+}
+
+BODY { 
+    color: black; 
+    background: #c8ccc8;
+%ifvar nobg%
+%else%
+    background-image: url(/WmRoot/images/bg_body.jpg);
+%endif%
+}
+
+<!-- Turn off Anchor underlining & make bold --> 
+
+A:link, A:visited, A:activated {
+    font-weight:     bold;
+    font-family:     helvetica;
+}
+
+TH.title      { xbackground-image: url(/WmRoot/images/bg_cell.jpg); }
+TH.action     { text-align: center }
+TD.action     { text-align: center }
+.action       { text-align: center }
+.action INPUT { }
+
+.purp1        { background: #ddbbdd; }
+.purp2        { background: #ccaacc; }
+
+.title        { background: #444499; color: white; text-align: center; }
+.heading      { background: #8686b0; color: black; }
+.subHeading   { background: #9999cc; text-align: center; }    
+.rowlabel     { background: #bbbbcc; }
+.data         { background: #ffffff; }
+.rowdata      { background: #ffffff; text-align: left;   }
+.coltext      { background: #ffffff; text-align: left;   }
+.coltext-l    { background: #ffffff; text-align: left;   }
+.coltext-r    { background: #ffffff; text-align: right;  }
+.coldata      { background: #ffffff; text-align: center; vertical-align: center; }
+
+IMG           { vertical-align: bottom; }
+IMG.alone     { vertical-align: middle; margin: 1px 1px 1px 1px; }
+IMG.back      { float: left; }
+INPUT         { font-weight: normal; background: white; }
+SELECT        { font-weight: normal; }
+OPTION        { font-weight: normal; }
+
+#message      { background: #dd9999; }
+
+.position     { text-align: center }
+
+</STYLE>
+
+<!-- END B2B STYLE -->
+

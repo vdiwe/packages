@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="shared">CgkKCgkJCgkJCgkJCgkJCg==</value>
+  <value name="encodeutf8">true</value>
+  <array name="imports" type="value" depth="1">
+    <value>java.io.File</value>
+    <value>java.io.FileInputStream</value>
+    <value>java.io.IOException</value>
+    <value>java.util.List</value>
+    <value>java.util.Properties</value>
+    <value>org.apache.commons.logging.Log</value>
+    <value>com.softwareag.rules.businessrulespackage.LicenseManager</value>
+    <value>com.softwareag.rules.businessrulespackage.RestartManager</value>
+    <value>com.softwareag.rules.businessrulespackage.ShutdownManager</value>
+    <value>com.softwareag.rules.businessrulespackage.StartupManager</value>
+    <value>com.softwareag.rules.businessrulespackage.logging.PackageFacilityCode</value>
+    <value>com.softwareag.rules.businessrulespackage.logging.PackageLoggingHandler</value>
+    <value>com.softwareag.rules.businessrulespackage.logging.RulesLoggingResources</value>
+    <value>com.softwareag.rules.businessrulespackage.logging.WmLog</value>
+    <value>com.softwareag.rules.businessrulespackage.targetruntimes.ProjectLog</value>
+    <value>com.softwareag.rules.businessrulespackage.targetruntimes.ProjectLogManager</value>
+    <value>com.softwareag.rules.businessrulespackage.targetruntimes.TargetRuntimesManager</value>
+    <value>com.softwareag.rules.businessrulespackage.logging.RulesLoggingResources</value>
+    <value>com.softwareag.rules.export.ITransferConstants</value>
+    <value>com.softwareag.rules.runtime.is.RESFacadeISWrapper</value>
+    <value>com.softwareag.rules.runtime.utils.log.CoreFacilityCode</value>
+    <value>com.softwareag.rules.utils.log.LoggerProvider</value>
+    <value>com.wm.app.b2b.server.InvokeState</value>
+    <value>com.wm.app.b2b.server.Package</value>
+    <value>com.wm.data.IData</value>
+    <value>com.wm.lang.ns.NSService</value>
+    <value>com.wm.util.JournalLogger</value>
+  </array>
+</Values>

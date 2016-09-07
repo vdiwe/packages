@@ -1,0 +1,85 @@
+<!-- BEGIN B2B STYLE -->
+
+<STYLE TYPE="text/css">
+
+P, TH, TD, FONT {}
+
+BODY { 
+    color: black; 
+    background: #c8ccc8;
+	background-image: url(images/bg_body.jpg);
+}
+
+TABLE { 
+    background: white;
+}
+
+TR {
+    background: #dddddd;
+}
+TH {
+    background: #dddddd;
+}
+TD {
+    background: #bababa;
+}
+
+TR.title TH {
+    background: #6666aa;
+}
+TH.title {
+    background: #6666aa;
+}
+
+TR.heading TH {
+    background: #8686b0;
+}
+TH.heading { 
+    background: #8686b0;
+}
+
+TR.subHeading TH { background: #9999cc }
+TH.subHeading { background: #9999cc }    
+
+.data {
+    background: white;
+}
+
+TH.action { background: #c8ccc8; text-align: center }
+TD.action { background: #c8ccc8; text-align: center }
+.action { background: #c8ccc8; text-align: center }
+.action INPUT { background: white }
+
+.rowlabel { }
+.rowdata { text-align: left; background: white }
+.coltext { text-align: left; background: white }
+.coldata { text-align: center; vertical-align: center; background: white }
+
+FONT.title {
+    text-align: center;
+} 
+
+IMG.back {
+    float: left;
+}
+
+INPUT {
+    font-weight: normal;
+}
+
+SELECT {
+    font-weight: normal;
+}
+
+OPTION {
+    font-weight: normal;
+}
+
+#message { 
+    background: #dd9999;
+}
+
+</STYLE>
+
+<!-- END B2B STYLE -->
+
