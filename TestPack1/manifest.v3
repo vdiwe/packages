@@ -10,4 +10,11 @@
   <null name="requires"/>
   <null name="listACL"/>
   <value name="webappLoad">yes</value>
+  <value name="name">TestPack1</value>
+  <value name="build">9.8.19</value>
+  <null name="description"/>
+  <value name="time">2016-09-12 14:21:27 EDT</value>
+  <value name="jvm_version">1.8.0_71</value>
+  <value name="publisher">MTUDU-W7.na.ds.lexmark.com</value>
+  <value name="patch_nums"></value>
 </Values>
